@@ -1,0 +1,106 @@
+ /* Variables pour le slider */
+  :root {
+    --slide-width: 150px;
+    --slide-gap: 30px;
+    --slides-per-series: 5;
+    /* Calcul de la largeur d'une série :
+       (largeur × nombre) + (gap × (nombre - 1)) */
+    --series-width: calc((var(--slide-width) * var(--slides-per-series)) + (var(--slide-gap) * (var(--slides-per-series) - 1)));
+    /* La piste contient 2 séries */
+    --track-width: calc(var(--series-width) * 2);
+  }
+  
+  #skills {
+    padding: 50px 0;
+    background: #383838;
+    text-align: center;
+  }
+  
+  #skills h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
+  
+  /* Conteneur du slider */
+.logo-slider {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* La piste qui défile */
+  .slide-track {
+    display: flex;
+    width: var(--track-width);
+    animation: scroll 20s linear infinite;
+  }
+  
+  /* Chaque slide (box) */
+  .slide {
+    flex: 0 0 var(--slide-width);
+    margin-right: var(--slide-gap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Nouvelle partie pour afficher les logos dans une box */
+    height: var(--slide-width);         /* Fixe la hauteur (ici égale à la largeur) */
+    background: #8f8d8d;                    /* Fond blanc pour la box */
+    padding: 10px;                      /* Un peu d'espace intérieur */
+    border-radius: 8px;                 /* Bords arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Ombre pour un effet de profondeur */
+  }
+  
+  /* Suppression de la marge à la fin de chaque série (ici pour 4 logos par série) */
+  .slide:nth-child(5),
+  .slide:nth-child(10) {
+    margin-right: 0.5;
+  }
+  
+  /* Les images à l'intérieur de la box */
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;  /* Pour conserver les proportions sans écraser l'image */
+  }
+  
+  /* Animation de défilement (reste identique) */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * var(--series-width)));
+    }
+  }
+  
+
+    /* Chaque slide (box) */
+    .slide {
+      flex: 0 0 var(--slide-width);
+      margin-right: var(--slide-gap);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      /* Nouvelle partie pour afficher les logos dans une box */
+      height: var(--slide-width);         /* Fixe la hauteur (ici égale à la largeur) */
+      background: #8f8d8d;                    /* Fond blanc pour la box */
+      padding: 10px;                      /* Un peu d'espace intérieur */
+      border-radius: 8px;                 /* Bords arrondis */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Ombre pour un effet de profondeur */
+    }
+
+      /* Chaque slide (box) */
+  .slide {
+    flex: 0 0 var(--slide-width);
+    margin-right: var(--slide-gap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--slide-width);
+    background: radial-gradient(circle, #3b3b3b 0%, #747474 100%);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
