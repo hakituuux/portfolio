@@ -1,0 +1,135 @@
+/* Global, shared styles for the whole site */
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --muted: rgba(255, 255, 255, 0.8);
+  --accent: #b81c00;
+  --nav-h: 72px;
+  --container: 1100px;
+  --gutter: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+/* Fixed navigation */
+nav.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--nav-h);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+nav.site-nav .nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+nav.site-nav .logo a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav.site-nav .nav-toggle {
+  display: none;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--fg);
+  padding: 10px 12px;
+  border-radius: 10px;
+  line-height: 1;
+}
+
+nav.site-nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+nav.site-nav ul.nav-links a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--fg);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+nav.site-nav ul.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Keep content visible under fixed nav */
+main {
+  padding-top: calc(var(--nav-h) + 20px);
+}
+
+/* Mobile menu */
+@media (max-width: 900px) {
+  nav.site-nav .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav.site-nav ul.nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.92);
+    padding: 14px var(--gutter);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    display: none;
+  }
+
+  nav.site-nav[data-open="true"] ul.nav-links {
+    display: flex;
+  }
+}
+

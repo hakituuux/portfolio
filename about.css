@@ -31,49 +31,7 @@
     flex: 1;
     padding: 80px 20px;
   }
-  /* Navigation */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-  }
-  
-  nav .logo a {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-left: 20px;
-  }
-  
-  nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: #b81c00;
-  }
-
-  main {
-    padding: 80px 20px;
-  }
+  /* Navigation now shared in styles/global.css */
   
   .about {
     padding: 60px 20px;
@@ -96,7 +54,7 @@
   }
   
   .about-photo img {
-    width: 315px;
+    width: min(315px, 100%);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     object-fit: cover;
@@ -109,7 +67,7 @@
   }
   
   .about-photo-bottom-right img {
-    width: 250px;
+    width: min(250px, 100%);
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -145,7 +103,7 @@
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
-    width: 650px; /* Longueur des boutons */
+    width: min(650px, 100%); /* évite de déborder sur mobile */
     text-align: center; /* Centrer le texte */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, transform 0.2s ease;

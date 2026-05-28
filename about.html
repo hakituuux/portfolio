@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Louane SANCHEZ - BTS SIO</title>
   <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="about.css">
   <!-- Optionnel : Lien vers une police Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -13,18 +14,23 @@
 
 <body>
   <header>
-    <nav>
-      <div class="logo">
-        <a href="index.html">Louane</a>
-      </div>
-      <ul>
+    <nav class="site-nav" data-open="false">
+      <div class="nav-inner container">
+        <div class="logo">
+          <a href="index.html">Louane</a>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Ouvrir le menu" aria-expanded="false">
+          Menu
+        </button>
+        <ul class="nav-links">
         <li><a href="about.html">À propos</a></li>
         <li><a href="projet.html">Projets & Expériences</a></li>
         <li><a href="projet.html#veille">Veille technologique</a></li>
         <li><a href="competences.html">Compétences</a></li>
         <li><a href="index.html#contact">BTS</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+        </ul>
+      </div>
     </nav>
   </header>
   <main>
@@ -70,6 +76,7 @@
     <p>&copy; 2025 Louane Sanchez. Tous droits réservés.</p>
     </div>
   </footer>
+  <script src="scripts/site.js"></script>
 </body>
 
 </html>
