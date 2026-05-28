@@ -26,7 +26,7 @@ header::before {
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #000000;
+  color: #ffffff;
   background: #000;
   /* Fond noir par défaut */
 }
@@ -42,48 +42,11 @@ body {
 
 main {
   flex: 1;
-  padding: 80px 20px
+  padding: 80px 20px;
 }
 
 /* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-}
-
-nav .logo a {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #b81c00;
-}
+/* Navigation now shared in styles/global.css */
 
 main {
   padding: 80px 20px;

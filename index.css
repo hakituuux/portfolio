@@ -12,59 +12,21 @@ body {
   background-color: #000000;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-nav .logo a {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #b81c00;
-}
+/* Navigation now shared in styles/global.css */
 
 header {
   position: relative;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
               url('images/fondbg.png') no-repeat center center/cover;
-  height: 800px;
+  min-height: 100vh;
   color: #fff;
   z-index: 1;
 }
 
 /* On positionne le hero container en haut du header */
 .hero-container {
-  position: absolute;
-  top: 100PX;
+  position: relative;
+  top: 0;
   left: 0;
   right: 0;
 
@@ -74,7 +36,6 @@ header {
 
   padding: 40px;
   padding-top: 40px;
-  max-height: 500px;
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -145,8 +106,8 @@ header {
 }
 
 .hero-right .about-image img {
-  width: 300px;    /* taille augmentée */
-  height: 350px;
+  width: min(300px, 100%);    /* évite le débordement */
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -397,29 +358,11 @@ header {
 }
 
 @media (max-width: 768px) {
-  nav {
-    padding: 15px;
-  }
-  
-  nav .logo a {
-    font-size: 1.2em;
-  }
-  
-  nav ul li {
-    margin-left: 0;
-    margin-bottom: 8px;
-  }
-  
-  nav ul li a {
-    font-size: 0.9em;
-  }
-  
   header {
-    height: 600px;
+    min-height: 100vh;
   }
   
   .hero-container {
-    top: 80px;
     padding: 20px;
     padding-top: 20px;
   }
@@ -506,27 +449,11 @@ header {
 }
 
 @media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    padding: 10px;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-  }
-  
-  nav ul li {
-    margin: 0;
-  }
-  
   header {
-    height: 500px;
+    min-height: 100vh;
   }
   
   .hero-container {
-    top: 60px;
     padding: 15px;
   }
   

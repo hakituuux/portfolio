@@ -21,7 +21,7 @@ body {
   font-family: 'Poppins', sans-serif;
   /* Police modifiée */
   line-height: 1.6;
-  color: #000000;
+  color: #ffffff;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
     url('images/fondreste.png') no-repeat center center/cover;
 }
@@ -38,45 +38,7 @@ main {
   padding: 80px 20px;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-}
-
-nav .logo a {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #b81c00;
-}
+/* Navigation now shared in styles/global.css */
 
 main {
   padding: 80px 20px;
@@ -124,10 +86,12 @@ main {
 .competence-inner-box {
   display: flex;
   margin-top: 10px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .competence-image {
-  width: 40%;
+  flex: 0 0 220px;
   /* Placer l'image à gauche */
   padding: 10px;
   display: flex;
@@ -163,6 +127,12 @@ main {
   /* Réduction du padding entre les éléments */
 }
 
+@media (max-width: 700px) {
+  .competence-image {
+    flex: 1 1 100%;
+  }
+}
+
 /* Pied de page */
 footer {
   background: linear-gradient(to bottom,
@@ -185,13 +155,4 @@ footer .social a:hover {
   color: #b81c00;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  .about-content {
-    flex-direction: column;
-  }
-}
+/* Responsive tweaks are mostly handled by styles/global.css */
