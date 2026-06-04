@@ -142,23 +142,6 @@ body:has(.page-site-bg) > main {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Parcours sur page projets */
-.parcours-fond {
-  padding: 40px 32px;
-  max-width: 900px;
-}
-
-.etape {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  color: #111;
-}
-
-.etape h3 {
-  color: #6900c5;
-}
-
 /* Bloc contact (identique à l’index) */
 .hero-actions {
   display: flex;

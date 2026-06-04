@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Louane SANCHEZ - BTS SIO</title>
-  <!-- Lien vers le fichier CSS -->
+  <title>Projets & Expériences — Louane Sanchez</title>
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/pages.css">
   <link rel="stylesheet" href="projet.css">
@@ -39,142 +38,303 @@
   </nav>
 
   <main>
-    <div class="page-shell">
-    <section class="projects">
-      <div id="veille"></div>
-      <h2>Mes Projets et Expériences</h2>
-      <div class="project-boxes">
-        <div class="project-box">
-          <h3>Gestion d'Hôtel</h3>
-          <p class="brief">Création d'un site d'hotel fictif, avec la gestion de l'hotel.</p>
-          <img src="images/projet1.png" alt="Projet 1">
-          <div class="details">
-            <p>Projet en HTML/CSS, PHP avec base de données MySQL, avec des fonctionnalitées de réservation de
-              différentes chambres,possibilité de payer, mais aussi de gestion client et de facturation partie
-              administration.</p>
-            <img src="images/chambre.png" alt="Chambre">
-            <img src="images/reservation.png" alt="reservation">
-          </div>
-        </div>
-        <div class="project-boxes">
-          <div class="project-box">
-            <h3>Projet gestion gite</h3>
-            <p class="brief">Création et utilisation d'une base de donnée déstinée à gérer des gites</p>
-            <img src="images/gites.png" alt="gites">
-            <div class="details">
-              <p>Prise en compte du sujet puis création d'un cahier des charges et d'un disctionnaire de données puis
-                d'un MCD. Création de la base de donnée sur MySQL.</p>
-              <img src="images/mcd.png" alt="mcd">
-              <img src="images/BDD.png" alt="BDD">
-            </div>
-          </div>
-          <div class="project-box3">
-            <h3>Veille technologique</h3>
-            <p class="brief">Veille technologique menée entre mars et avril 2025 sur "Comment Elon Musk impacte
-              l’avancée de l’IA dans le monde ?" </p>
-            <div class="details">
-              <p>Réalisation d'une veille technologique entre mars et avril 2025, disponible ci dessous.</p>
-              <a href="pdf/VeilleTechno2024-2025.pdf" download class="download-btn">📄 Télécharger le PDF</a>
-            </div>
-          </div>
-          <div class="project-box2">
-            <h3>Site e-commerce</h3>
-            <p class="brief">Création d'un site e-commerce de snacks americains et asiatique...</p>
-            <img src="images/projet2.png" alt="Projet 2">
-            <div class="details">
-              <p>Projet mené dans le cadre de l'apprentissage du module SEO et un responsive design. Site développé en
-                HTML/CSS/JS , avec une optimisation SEO. Ajout au panier, gestion produit, possibilité de payer.</p>
-              <img src="images/accueil.png" alt="accueil">
-              <img src="images/asiat.png" alt="asiat">
-              <img src="images/americain.png" alt="americain">
-              <img src="images/panier.png" alt="panier">
-            </div>
-          </div>
-        </div>
-        <div class="project-box5">
-          <h3>Workshop 2025-2026</h3>
-          <p class="brief">Workshop d'une semaine réalisé en début d'année 2025-2026 en seconde année de BTS. </p>
-          <img src="images/projet5.jpg" alt="Experience 4">
-          <div class="details">
-            <p>Workshop réalisé en une semaine lors du lancement de seconde année de BTS. Le sujet étant de créer un
-              gadget qui servirait à James Bond lors de ses missions, nous avons réalisé une cafetière permettant de
-              communiquer en morse. Cette cafetière remplacera la salle de repos de l'organisation infiltrée et
-              permettra de communiquer en toute discretion.</p>
-            <img src="images/Caftiere.jpg" alt="cafetière">
-            <img src="images/Cafetierebtn.jpg" alt="bouton">
-            <img src="images/SiteWS.png" alt="site">
-            <a href="pdf/Workshop2025-26.pdf" download class="download-btn">▶️ Télécharger la présentation</a>
-            <a href="pdf/Workshop2025-26-SN2g-dossier.pdf" download class="download-btn">📄 Télécharger la
-              documentation</a>
-          </div>
-        </div>
-        <div class="experiences">
-          <h2>Mes Expériences</h2>
-          <div class="experience-boxes">
+    <div class="projet-page page-shell">
 
-            <div class="experience-box">
-              <h3>Stage en entreprise</h3>
-              <p class="brief">Stage de 7 semaines réalisé au sein de la team digital de l'entreprise Genvia à
-                Béziers.</p>
-              <img src="images/projet4.jpg" alt="entreprise">
-              <div class="details">
-                <p>Stage en entreprise de première année de BTS, réalisé chez Genvia dans la team Digital. Projet de
-                  digitalisation du SFDM de la ligne de production via le logiciel Tulip</p>
-                <img src="images/objetifsstage.jpg" alt="obj">
-                <a href="pdf/attestation stage.pdf" download class="download-btn">📄 Télécharger l'attestation de
-                  stage</a>
+      <header class="projet-page__header">
+        <h1>Projets & Expériences</h1>
+        <p class="projet-page__intro">Découvrez mes réalisations, mes stages, mes situations professionnelles du BTS et mes veilles technologiques.</p>
+      </header>
+
+      <!-- Projets -->
+      <section class="projet-section" id="projets" aria-labelledby="projets-title">
+        <h2 id="projets-title">Mes projets</h2>
+        <div class="cards-grid">
+
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview">
+                  <img src="images/projet1.png" alt="Aperçu du projet Gestion d'hôtel" loading="lazy" decoding="async">
+                  <div class="portfolio-card__head">
+                    <h3>Gestion d'hôtel</h3>
+                    <p class="portfolio-card__brief">Création d'un site d'hôtel fictif, avec la gestion de l'hôtel.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Projet en HTML/CSS, PHP avec base de données MySQL, avec des fonctionnalités de réservation de
+                  différentes chambres, possibilité de payer, mais aussi de gestion client et de facturation partie
+                  administration.</p>
+                <div class="portfolio-card__gallery">
+                  <img src="images/chambre.png" alt="Page chambre" loading="lazy" decoding="async">
+                  <img src="images/reservation.png" alt="Page réservation" loading="lazy" decoding="async">
+                </div>
               </div>
-            </div>
+            </details>
+          </article>
 
-          </div>
-        </div>
-      </div>
-      <section class="parcours-scolaire">
-        <h2>Mon Parcours scolaire</h2>
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview">
+                  <img src="images/gites.png" alt="Aperçu du projet gestion de gîtes" loading="lazy" decoding="async">
+                  <div class="portfolio-card__head">
+                    <h3>Projet gestion gîte</h3>
+                    <p class="portfolio-card__brief">Création et utilisation d'une base de données destinée à gérer des gîtes.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Prise en compte du sujet puis création d'un cahier des charges et d'un dictionnaire de données puis
+                  d'un MCD. Création de la base de données sur MySQL.</p>
+                <div class="portfolio-card__gallery">
+                  <img src="images/mcd.png" alt="Modèle conceptuel de données" loading="lazy" decoding="async">
+                  <img src="images/BDD.png" alt="Base de données" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </details>
+          </article>
 
-        <!-- Boîte blanche de fond -->
-        <div class="parcours-fond">
-          <div class="grille-parcours">
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview">
+                  <img src="images/projet2.png" alt="Aperçu du site e-commerce" loading="lazy" decoding="async">
+                  <div class="portfolio-card__head">
+                    <h3>Site e-commerce</h3>
+                    <p class="portfolio-card__brief">Création d'un site e-commerce de snacks américains et asiatiques.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Projet mené dans le cadre de l'apprentissage du module SEO et d'un responsive design. Site développé en
+                  HTML/CSS/JS, avec une optimisation SEO. Ajout au panier, gestion produit, possibilité de payer.</p>
+                <div class="portfolio-card__gallery">
+                  <img src="images/accueil.png" alt="Page d'accueil" loading="lazy" decoding="async">
+                  <img src="images/asiat.png" alt="Produits asiatiques" loading="lazy" decoding="async">
+                  <img src="images/americain.png" alt="Produits américains" loading="lazy" decoding="async">
+                  <img src="images/panier.png" alt="Panier" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </details>
+          </article>
 
-            <div class="etape college">
-              <h3>Collège privé Fenelon Béziers</h3>
-              <p>
-                2017-2021 <br>
-                Brevet des collèges mention Très Bien<br>
-                Classes européennes en anglais en 4ème et 3ème<br>
-                Stage observation de 3ème au sein de la police rurale de Lignan sur Orb
-              </p>
-            </div>
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview">
+                  <img src="images/projet5.jpg" alt="Aperçu du workshop James Bond" loading="lazy" decoding="async">
+                  <div class="portfolio-card__head">
+                    <h3>Workshop 2025-2026</h3>
+                    <p class="portfolio-card__brief">Workshop d'une semaine réalisé en début d'année 2025-2026 en seconde année de BTS.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Workshop réalisé en une semaine lors du lancement de seconde année de BTS. Le sujet étant de créer un
+                  gadget qui servirait à James Bond lors de ses missions, nous avons réalisé une cafetière permettant de
+                  communiquer en morse. Cette cafetière remplacera la salle de repos de l'organisation infiltrée et
+                  permettra de communiquer en toute discrétion.</p>
+                <div class="portfolio-card__gallery">
+                  <img src="images/Caftiere.jpg" alt="Cafetière" loading="lazy" decoding="async">
+                  <img src="images/Cafetierebtn.jpg" alt="Bouton de la cafetière" loading="lazy" decoding="async">
+                  <img src="images/SiteWS.png" alt="Site du workshop" loading="lazy" decoding="async">
+                </div>
+                <div class="portfolio-card__actions">
+                  <a href="pdf/Workshop2025-26.pdf" download class="download-btn">Télécharger la présentation</a>
+                  <a href="pdf/Workshop2025-26-SN2g-dossier.pdf" download class="download-btn">Télécharger la documentation</a>
+                </div>
+              </div>
+            </details>
+          </article>
 
-            <div class="etape lycee">
-              <h3>Lycée général Henri IV Béziers</h3>
-              <p>2021-2024 <br>
-                Baccalauréat général mention Assez Bien<br>
-                Spécialités : SVT - SES <br>
-              </p>
-            </div>
+          <article class="portfolio-card content-box portfolio-card--sp">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview portfolio-card__preview--badge">
+                  <span class="portfolio-card__badge">BTS SIO</span>
+                  <div class="portfolio-card__head">
+                    <h3>Situation professionnelle n°1</h3>
+                    <p class="portfolio-card__brief">Première situation professionnelle du BTS SIO — contenu à compléter.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Description, compétences mobilisées et livrables de la situation professionnelle n°1 à venir.</p>
+              </div>
+            </details>
+          </article>
 
-            <div class="etape etudes">
-              <h3>EPSI Montpellier</h3>
-              <p>
-                2024-2025<br> SN1 en 1ère année de BTS SIO, stage en entreprise durant 7 semaines chez Genvia<br>
-                2025-2026<br> SN2 en 2nd année de BTS SIO <br>
-              </p>
-            </div>
+          <article class="portfolio-card content-box portfolio-card--sp">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview portfolio-card__preview--badge">
+                  <span class="portfolio-card__badge">BTS SIO</span>
+                  <div class="portfolio-card__head">
+                    <h3>Situation professionnelle n°2</h3>
+                    <p class="portfolio-card__brief">Deuxième situation professionnelle du BTS SIO — contenu à compléter.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Description, compétences mobilisées et livrables de la situation professionnelle n°2 à venir.</p>
+              </div>
+            </details>
+          </article>
 
-            <!-- Flèches -->
-            <div class="fleche fleche1">➔</div>
-            <div class="fleche fleche2">➔</div>
-
-          </div>
         </div>
       </section>
+
+      <!-- Expériences -->
+      <section class="projet-section" id="experiences" aria-labelledby="experiences-title">
+        <h2 id="experiences-title">Mes expériences</h2>
+        <div class="cards-grid cards-grid--experiences">
+
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview">
+                  <img src="images/projet4.jpg" alt="Stage chez Genvia" loading="lazy" decoding="async">
+                  <div class="portfolio-card__head">
+                    <h3>Stage en entreprise — 1<sup>re</sup> année</h3>
+                    <p class="portfolio-card__brief">Stage de 7 semaines réalisé au sein de la team digital de l'entreprise Genvia à Béziers.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Stage en entreprise de première année de BTS, réalisé chez Genvia dans la team Digital. Projet de
+                  digitalisation du SFDM de la ligne de production via le logiciel Tulip.</p>
+                <div class="portfolio-card__gallery">
+                  <img src="images/objetifsstage.jpg" alt="Objectifs du stage" loading="lazy" decoding="async">
+                </div>
+                <div class="portfolio-card__actions">
+                  <a href="pdf/attestation stage.pdf" download class="download-btn">Télécharger l'attestation de stage</a>
+                </div>
+              </div>
+            </details>
+          </article>
+
+          <article class="portfolio-card content-box">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview portfolio-card__preview--badge">
+                  <span class="portfolio-card__badge">Stage SN2</span>
+                  <div class="portfolio-card__head">
+                    <h3>Stage en entreprise — 2<sup>e</sup> année</h3>
+                    <p class="portfolio-card__brief">Stage de seconde année de BTS SIO — contenu à compléter.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Détails du stage de seconde année (entreprise, missions, compétences mobilisées) à venir.</p>
+              </div>
+            </details>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Veilles -->
+      <section class="projet-section" id="veille" aria-labelledby="veille-title">
+        <h2 id="veille-title">Mes veilles technologiques</h2>
+        <div class="cards-grid cards-grid--veilles">
+
+          <article class="portfolio-card content-box portfolio-card--veille">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview portfolio-card__preview--badge">
+                  <span class="portfolio-card__badge">Veille</span>
+                  <div class="portfolio-card__head">
+                    <h3>Veille technologique 2024-2025</h3>
+                    <p class="portfolio-card__brief">Veille menée entre mars et avril 2025 sur « Comment Elon Musk impacte l'avancée de l'IA dans le monde ? »</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Réalisation d'une veille technologique entre mars et avril 2025, disponible ci-dessous.</p>
+                <div class="portfolio-card__actions">
+                  <a href="pdf/VeilleTechno2024-2025.pdf" download class="download-btn">Télécharger le PDF</a>
+                </div>
+              </div>
+            </details>
+          </article>
+
+          <article class="portfolio-card content-box portfolio-card--veille">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">
+                <div class="portfolio-card__preview portfolio-card__preview--badge">
+                  <span class="portfolio-card__badge">Veille</span>
+                  <div class="portfolio-card__head">
+                    <h3>Veille technologique 2025-2026</h3>
+                    <p class="portfolio-card__brief">Deuxième veille technologique — contenu à compléter.</p>
+                    <span class="portfolio-card__toggle" aria-hidden="true">Voir le détail</span>
+                  </div>
+                </div>
+              </summary>
+              <div class="portfolio-card__body">
+                <p>Sujet, sources et synthèse de la deuxième veille technologique à venir.</p>
+              </div>
+            </details>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Parcours scolaire (identique à l'index) -->
+      <section class="parcours-scolaire" aria-labelledby="parcours-title">
+        <h2 id="parcours-title">Mon parcours scolaire</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <h3>Collège privé Fenelon Béziers</h3>
+              <p>
+                <strong>2017-2021</strong><br>
+                Brevet des collèges mention Très Bien<br>
+                Classes européennes en anglais en 4<sup>e</sup> et 3<sup>e</sup><br>
+                Stage d'observation de 3<sup>e</sup> au sein de la police rurale de Lignan-sur-Orb
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <h3>Lycée général Henri IV Béziers</h3>
+              <p>
+                <strong>2021-2024</strong><br>
+                Baccalauréat général mention Assez Bien<br>
+                Spécialités : SVT - SES
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <h3>EPSI Montpellier</h3>
+              <p>
+                <strong>2024-2026</strong><br>
+                1<sup>re</sup> année de BTS SIO option SLAM, stage de 7 semaines chez Genvia<br>
+                2<sup>e</sup> année de BTS SIO
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Louane Sanchez. Tous droits réservés.</p>
-
   </footer>
   <script src="scripts/site.js"></script>
   <script type="module" src="scripts/tubes-cursor.js"></script>
