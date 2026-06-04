@@ -21,7 +21,7 @@ main h2 {
 }
 
 /* ================================
-   SNIP1573 (user style)
+   PROJECTS + SNIP1573 (style validé)
 ==================================*/
 .snip1573 {
   background-color: #000;
@@ -51,11 +51,11 @@ main h2 {
   left: 0;
   right: 0;
   transition: all 0.35s ease;
-  background-color: rgba(0, 0, 0, 0.797);
-  border-left: 5px solid #fff;
-  border-right: 5px solid #fff;
+  background-color: rgba(40, 40, 40, 0.75);
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
   content: '';
-  opacity: 0.7;
+  opacity: 1;
   z-index: 1;
 }
 
@@ -75,20 +75,25 @@ main h2 {
 }
 
 .snip1573 figcaption {
-  bottom: 45px;
+  top: 50%;
+  left: 50%;
   position: absolute;
-  width: 100%;
   z-index: 2;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  width: auto;
+  bottom: auto;
 }
 
 .snip1573 h3 {
   background-color: #000;
+  border: 2px solid #fff;
   color: #fff;
-  font-size: 0.9em;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: 600;
   letter-spacing: 1px;
   margin: 0;
-  padding: 10px 5px;
+  padding: 5px 10px;
   text-transform: uppercase;
 }
 
@@ -108,7 +113,13 @@ main h2 {
   transform: skew(45deg) translateX(55%);
 }
 
-/* Projects section — white master box */
+.snip1573:hover figcaption,
+.snip1573.hover figcaption {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Grande box blanche — effet snip sur l'ensemble */
 .projects-section {
   padding: 56px 20px 26px;
   max-width: 1600px;
@@ -123,6 +134,11 @@ main h2 {
   background: rgba(255, 255, 255, 0.96);
   padding: 16px;
   border-radius: 22px;
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.35),
+    0 18px 45px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .snip1573.snip-projects--section > img {
@@ -133,6 +149,11 @@ main h2 {
   pointer-events: none;
 }
 
+.snip1573.snip-projects--section:hover .projects-master,
+.snip1573.snip-projects--section.hover .projects-master {
+  opacity: 0.85;
+}
+
 .snip1573 .projects-master {
   position: relative;
   z-index: 0;
@@ -140,6 +161,7 @@ main h2 {
   color: #111;
   border-radius: 24px;
   padding: 34px;
+  pointer-events: none;
 }
 
 .snip1573 .projects-master__grid {
@@ -149,10 +171,10 @@ main h2 {
 }
 
 .snip1573 .projects-master__card {
-  background: #ffffff;
+  background: #fff;
   border: 2px solid #fff;
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 22px;
+  padding: 28px;
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 18px;
@@ -163,7 +185,7 @@ main h2 {
 .snip1573 .projects-master__card img {
   width: 260px;
   height: 175px;
-  border-radius: 16px;
+  border-radius: 18px;
   object-fit: cover;
 }
 
@@ -174,11 +196,11 @@ main h2 {
 }
 
 .snip1573 .projects-master__text strong {
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem);
 }
 
 .snip1573 .projects-master__text span {
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
+  font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.25rem);
   opacity: 0.78;
 }
 
@@ -186,6 +208,13 @@ main h2 {
    Skills slider
 ==================================*/
 #skills {
+  --slide-w: 150px;
+  --slide-gap: 24px;
+  --slides-per-series: 5;
+  --series-width: calc(
+    (var(--slide-w) * var(--slides-per-series)) +
+    (var(--slide-gap) * (var(--slides-per-series) - 1))
+  );
   padding: 56px 0;
   background: #383838;
   text-align: center;
@@ -195,21 +224,26 @@ main h2 {
   overflow: hidden;
   position: relative;
   width: 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .slide-track {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 24px;
+  gap: var(--slide-gap);
   width: max-content;
-  animation: skills-scroll 22s linear infinite;
+  animation: skills-scroll 28s linear infinite;
+  animation-play-state: running;
   will-change: transform;
   padding: 10px 0;
 }
 
 .slide {
-  flex: 0 0 150px;
-  height: 150px;
+  flex: 0 0 var(--slide-w);
+  width: var(--slide-w);
+  height: var(--slide-w);
+  flex-shrink: 0;
   display: grid;
   place-items: center;
   background: radial-gradient(circle, #3b3b3b 0%, #747474 100%);
@@ -227,22 +261,19 @@ main h2 {
   object-fit: contain;
 }
 
+/* Boucle infinie : distance mesurée en JS (--scroll-distance) ou série CSS */
 @keyframes skills-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.logo-slider:hover .slide-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slide-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(calc(-1 * var(--scroll-distance, var(--series-width))));
+  }
+}
+
+.logo-slider:hover .slide-track,
+.logo-slider:focus-within .slide-track {
+  animation-play-state: running;
 }
 
 /* ================================
@@ -288,7 +319,6 @@ header:has(.hero-container) {
   overflow: visible;
 }
 
-body:has(.hero-container) > header,
 body:has(.hero-container) > main,
 body:has(.hero-container) > footer {
   position: relative;
@@ -310,7 +340,9 @@ header:has(.hero-container) + main {
 
 #BTS > h2 {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
 }
 
@@ -322,17 +354,12 @@ header:has(.hero-container) + main {
 
 .hero-layout {
   --hero-actions-h: 26rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 28px 32px;
 }
 
 .hero-intro-row {
-  flex: 1 1 520px;
   display: flex;
   align-items: stretch;
-  gap: 32px;
+  gap: clamp(20px, 3vw, 32px);
   min-width: 0;
   min-height: var(--hero-actions-h);
 }
@@ -384,7 +411,7 @@ header:has(.hero-container) + main {
 }
 
 .hero-intro {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -422,23 +449,26 @@ header:has(.hero-container) + main {
 }
 
 .hero-actions {
-  flex: 0 0 min(300px, 100%);
+  flex: 0 0 300px;
+  width: 300px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 18px;
+  gap: 11px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  align-self: flex-start;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  align-self: stretch;
+  flex-shrink: 0;
 }
 
 .hero-action {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 14px;
+  padding: 16px 18px;
   text-decoration: none;
   color: #fff;
   background: rgba(0, 0, 0, 0.35);
@@ -454,22 +484,22 @@ header:has(.hero-container) + main {
 }
 
 .hero-action__icon {
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 11px;
   background: linear-gradient(135deg, rgba(105, 0, 197, 0.5), rgba(255, 123, 15, 0.45));
 }
 
 .hero-action__icon svg {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .hero-action__label {
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
   font-weight: 600;
   text-align: left;
 }
@@ -505,9 +535,13 @@ header:has(.hero-container) + main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+  align-items: stretch;
 }
 
 .bts-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 24px;
@@ -529,11 +563,18 @@ header:has(.hero-container) + main {
 }
 
 .bts-card__body {
+  flex: 1;
   display: grid;
-  grid-template-columns: 1fr minmax(280px, 420px);
+  grid-template-columns: 1fr minmax(220px, 36%);
   gap: 18px;
   align-items: stretch;
   margin-top: 14px;
+}
+
+.bts-card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bts-card__text p {
@@ -546,15 +587,22 @@ header:has(.hero-container) + main {
   margin-bottom: 0;
 }
 
+/* Image = même hauteur que le bloc texte (les deux cartes identiques) */
 .bts-card__image {
+  position: relative;
+  min-height: 100%;
   align-self: stretch;
-  display: flex;
+  overflow: hidden;
+  border-radius: 18px;
 }
 
 .bts-card__image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
@@ -666,11 +714,6 @@ footer {
     padding-top: 4vh;
   }
 
-  .hero-layout {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .hero-intro-row {
     flex-direction: column;
     align-items: center;
@@ -696,7 +739,9 @@ footer {
   .hero-actions {
     flex: 1 1 auto;
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
+    min-height: 0;
+    margin-left: 0;
     margin-inline: auto;
   }
 
@@ -714,10 +759,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .bts-card__image {
+    min-height: 220px;
+  }
+
   .bts-card__image img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 220px;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
   }
 
   .snip1573 .projects-master__card {
@@ -731,9 +782,15 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #skills {
+    --slide-w: 120px;
+    --slide-gap: 18px;
+  }
+
   .slide {
-    flex: 0 0 120px;
-    height: 120px;
+    flex: 0 0 var(--slide-w);
+    width: var(--slide-w);
+    height: var(--slide-w);
   }
 
   .slide img {

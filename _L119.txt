@@ -1,0 +1,169 @@
+*** Begin Patch
+*** Update File: c:\Users\sanch\OneDrive - Ifag Paris\Bureau\portfolio\index.css
+@@
+ .snip1573 {
+   background-color: #000;
+   display: inline-block;
+   font-family: 'Open Sans', sans-serif;
+-  font-size: 16px;
++  font-size: 18px;
+   margin: 10px 7px;
+   max-width: 315px;
+   min-width: 230px;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   width: 100%;
+   border-radius: 14px;
+ }
+@@
+ .projects-section {
+-  padding: 30px 20px 10px;
+-  max-width: 1100px;
++  padding: 44px 20px 18px;
++  max-width: 1240px;
+   margin: 0 auto;
+ }
+ 
+ .snip1573.snip-projects--section {
+-  max-width: 1100px;
++  max-width: 1240px;
+   margin: 10px auto 0;
+   min-width: 0;
++  background: rgba(255, 255, 255, 0.96);
+ }
+ 
+ .snip1573.snip-projects--section > img {
+-  height: 420px;
++  height: auto;
+ }
+ 
+ .snip1573 .projects-master {
+-  position: absolute;
+-  left: 22px;
+-  right: 22px;
+-  bottom: 22px;
+-  z-index: 0; /* under overlay (z=1) */
+-  background: rgba(255, 255, 255, 0.94);
++  position: relative;
++  left: auto;
++  right: auto;
++  bottom: auto;
++  z-index: 0; /* under overlay (z=1) */
++  background: transparent;
+   color: #111;
+-  border-radius: 22px;
+-  padding: 18px;
+-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
++  border-radius: 22px;
++  padding: 22px;
++  box-shadow: none;
+ }
+@@
+ .snip1573 .projects-master__grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+-  gap: 14px;
++  gap: 18px;
+ }
+ 
+ .snip1573 .projects-master__card {
+   background: #ffffff;
+   border-radius: 18px;
+-  padding: 14px;
++  padding: 18px;
+   display: grid;
+-  grid-template-columns: 110px 1fr;
+-  gap: 12px;
++  grid-template-columns: 160px 1fr;
++  gap: 16px;
+   align-items: center;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+ }
+ 
+ .snip1573 .projects-master__card img {
+-  width: 110px;
+-  height: 76px;
+-  border-radius: 14px;
++  width: 160px;
++  height: 110px;
++  border-radius: 16px;
+   object-fit: cover;
+ }
+@@
+ .snip1573 .projects-master__text strong {
+-  font-size: 1rem;
++  font-size: 1.1rem;
+ }
+ 
+ .snip1573 .projects-master__text span {
+-  font-size: 0.92rem;
++  font-size: 1rem;
+   opacity: 0.78;
+ }
+@@
+ .parcours-scolaire {
+-  padding: 30px 20px;
+-  max-width: 1100px;
++  padding: 44px 20px;
++  max-width: 1240px;
+   margin: 0 auto;
+ }
+@@
+ .timeline::before {
+@@
+-  left: 18px;
+-  width: 4px;
++  left: 20px;
++  width: 6px;
+@@
+ .timeline-item {
+@@
+-  grid-template-columns: 44px 1fr;
+-  gap: 18px;
+-  padding: 6px 0 22px;
++  grid-template-columns: 52px 1fr;
++  gap: 20px;
++  padding: 10px 0 28px;
+ }
+ 
+ .timeline-dot {
+-  width: 14px;
+-  height: 14px;
++  width: 18px;
++  height: 18px;
+   border-radius: 999px;
+-  margin-left: 11px;
+-  margin-top: 18px;
++  margin-left: 11px;
++  margin-top: 20px;
+   background: #000;
+-  border: 3px solid #fff;
+-  box-shadow: 0 0 0 4px rgba(105, 0, 197, 0.25);
++  border: 4px solid #fff;
++  box-shadow: 0 0 0 6px rgba(105, 0, 197, 0.25);
+   position: relative;
+   z-index: 1;
+ }
+ 
+ .timeline-card {
+@@
+-  border-radius: 18px;
+-  padding: 16px 18px;
++  border-radius: 20px;
++  padding: 20px 22px;
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .timeline-card h3 {
+   margin: 0 0 6px;
+-  font-size: 1.1rem;
++  font-size: 1.25rem;
+ }
+ 
+ .timeline-card p {
+   margin: 0;
+   opacity: 0.92;
++  font-size: 1.05rem;
+ }
+*** End Patch

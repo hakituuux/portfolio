@@ -14,27 +14,24 @@
 
 <body>
   <canvas id="tubes-canvas" aria-hidden="true"></canvas>
-  <!-- En-tête avec navigation et section héro -->
-  <header>
-    <nav class="site-nav" data-open="false">
-      <div class="nav-inner container">
-        <div class="logo">
-          <a href="index.html">Louane</a>
-        </div>
-        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Ouvrir le menu" aria-expanded="false">
-          Menu
-        </button>
-        <ul class="nav-links">
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="projet.html">Projets & Expériences</a></li>
-        <li><a href="projet.html#veille">Veille technologique</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="index.html#contact">BTS</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+  <nav class="site-nav" data-open="false" aria-label="Navigation principale">
+    <div class="nav-inner container">
+      <div class="logo">
+        <a class="nav-btn nav-btn--brand" href="index.html">Louane</a>
       </div>
-    </nav>
-  </header>
+      <button class="nav-toggle nav-btn" type="button" data-nav-toggle aria-label="Ouvrir le menu" aria-expanded="false">
+        Menu
+      </button>
+      <ul class="nav-links">
+        <li><a class="nav-btn" href="about.html">À propos</a></li>
+        <li><a class="nav-btn" href="projet.html">Projets & Expériences</a></li>
+        <li><a class="nav-btn" href="projet.html#veille">Veille technologique</a></li>
+        <li><a class="nav-btn" href="competences.html">Compétences</a></li>
+        <li><a class="nav-btn" href="index.html#BTS">BTS</a></li>
+        <li><a class="nav-btn" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
     <!-- Ton contenu ici -->

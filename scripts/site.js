@@ -28,5 +28,11 @@
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900) setOpen(false);
   });
-})();
 
+  const onScroll = () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();

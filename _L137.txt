@@ -1,0 +1,62 @@
+*** Begin Patch
+*** Update File: c:\Users\sanch\OneDrive - Ifag Paris\Bureau\portfolio\index.css
+@@
+ .projects-section {
+   padding: 56px 20px 26px;
+-  max-width: 1440px;
++  max-width: 1600px;
+   margin: 0 auto;
+ }
+ 
+ .snip1573.snip-projects--section {
+-  max-width: 1440px;
++  max-width: 1600px;
+   margin: 10px auto 0;
+   min-width: 0;
+   background: rgba(255, 255, 255, 0.96);
+   padding: 16px;
+   border-radius: 22px;
+ }
+@@
+ .snip1573 .projects-master {
+   position: relative;
+   left: auto;
+   right: auto;
+   bottom: auto;
+   z-index: 0; /* under overlay (z=1) */
+   background: transparent;
+   color: #111;
+   border-radius: 24px;
+-  padding: 28px;
++  padding: 34px;
+   box-shadow: none;
+ }
+@@
+ .snip1573 .projects-master__grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 22px;
+ }
+ 
+ .snip1573 .projects-master__card {
+   background: #ffffff;
+   border-radius: 22px;
+-  padding: 24px;
++  padding: 28px;
+   display: grid;
+-  grid-template-columns: 220px 1fr;
++  grid-template-columns: 260px 1fr;
+   gap: 18px;
+   align-items: center;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+ }
+ 
+ .snip1573 .projects-master__card img {
+-  width: 220px;
+-  height: 150px;
++  width: 260px;
++  height: 175px;
+   border-radius: 18px;
+   object-fit: cover;
+ }
+*** End Patch

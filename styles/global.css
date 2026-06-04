@@ -4,12 +4,19 @@
   --fg: #fff;
   --muted: rgba(255, 255, 255, 0.8);
   --accent: #b81c00;
-  --nav-h: 72px;
+  --violet: #6900c5;
+  --orange: #ff7b0f;
+  --pink: #de0067;
+  --grad-site: linear-gradient(135deg, var(--violet), var(--orange), var(--pink));
+  --nav-h: 88px;
+  --nav-btn-h: 48px;
+  --nav-btn-radius: 10px;
   --container: 1600px;
   --gutter: clamp(14px, 2.2vw, 32px);
   --layer-hero-bg: 0;
   --layer-tubes: 1;
   --layer-content: 2;
+  --layer-nav: 1000;
 }
 
 *,
@@ -46,6 +53,12 @@ body {
 
 body.tubes-cursor-enabled > .hero-site-bg {
   z-index: var(--layer-hero-bg);
+}
+
+body.tubes-cursor-enabled > nav.site-nav {
+  position: fixed;
+  z-index: var(--layer-nav);
+  pointer-events: auto;
 }
 
 body.tubes-cursor-enabled > header,
@@ -85,55 +98,171 @@ nav.site-nav {
   position: fixed;
   inset: 0 0 auto 0;
   height: var(--nav-h);
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
+  z-index: var(--layer-nav);
+  pointer-events: auto;
+  background:
+    linear-gradient(180deg, rgba(18, 14, 28, 0.94) 0%, rgba(8, 8, 14, 0.9) 100%);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+nav.site-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(105, 0, 197, 0.12) 0%,
+    transparent 35%,
+    transparent 65%,
+    rgba(255, 123, 15, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+nav.site-nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--grad-site);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+nav.site-nav.is-scrolled {
+  background:
+    linear-gradient(180deg, rgba(12, 10, 20, 0.97) 0%, rgba(6, 6, 12, 0.96) 100%);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 nav.site-nav .nav-inner {
+  position: relative;
+  z-index: 1;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: clamp(12px, 2vw, 28px);
 }
 
-nav.site-nav .logo a {
-  font-size: 1.25rem;
-  font-weight: 700;
+nav.site-nav .logo {
+  flex-shrink: 0;
+}
+
+/* Boutons nav : rectangles légèrement arrondis, plus grands */
+nav.site-nav .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--nav-btn-h);
+  padding: 11px clamp(14px, 1.4vw, 22px);
+  border-radius: var(--nav-btn-radius);
+  font-family: inherit;
+  font-size: clamp(0.88rem, 0.82rem + 0.25vw, 0.98rem);
+  font-weight: 600;
+  line-height: 1.2;
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+nav.site-nav .nav-btn--brand {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  font-weight: 700;
+  min-height: calc(var(--nav-btn-h) + 2px);
+  padding-inline: clamp(18px, 2vw, 28px);
+  background: linear-gradient(135deg, rgba(105, 0, 197, 0.25), rgba(255, 123, 15, 0.18));
+  border-color: rgba(255, 123, 15, 0.35);
+}
+
+nav.site-nav .nav-btn:hover {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(105, 0, 197, 0.55), rgba(255, 123, 15, 0.42));
+  border-color: rgba(255, 123, 15, 0.55);
+  box-shadow: 0 4px 14px rgba(105, 0, 197, 0.35);
+  transform: translateY(-1px);
+}
+
+nav.site-nav .nav-btn:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, rgba(105, 0, 197, 0.72), rgba(222, 0, 103, 0.5));
+  border-color: rgba(222, 0, 103, 0.6);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+nav.site-nav .nav-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
 }
 
 nav.site-nav .nav-toggle {
   display: none;
   appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--fg);
-  padding: 10px 12px;
-  border-radius: 10px;
-  line-height: 1;
 }
 
 nav.site-nav ul.nav-links {
   list-style: none;
   display: flex;
-  align-items: center;
-  gap: 18px;
+  align-items: stretch;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: clamp(8px, 1vw, 12px);
   margin: 0;
   padding: 0;
+  min-width: 0;
 }
 
-nav.site-nav ul.nav-links a {
-  text-decoration: none;
-  font-weight: 700;
-  color: var(--fg);
-  transition: color 0.2s ease;
-  white-space: nowrap;
+nav.site-nav ul.nav-links li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
 }
 
-nav.site-nav ul.nav-links a:hover {
-  color: var(--accent);
+@media (min-width: 901px) {
+  nav.site-nav ul.nav-links {
+    justify-content: stretch;
+    max-width: min(1100px, 72vw);
+    margin-left: auto;
+  }
+
+  nav.site-nav ul.nav-links li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  nav.site-nav ul.nav-links .nav-btn {
+    width: 100%;
+    padding-inline: clamp(10px, 1vw, 18px);
+    font-size: clamp(0.8rem, 0.72rem + 0.35vw, 0.94rem);
+  }
+}
+
+body > header {
+  position: relative;
+  z-index: var(--layer-content);
 }
 
 main {
@@ -156,13 +285,27 @@ body:has(.hero-container) main {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.92);
-    padding: 14px var(--gutter);
+    flex: none;
+    max-width: none;
+    background: rgba(6, 6, 12, 0.97);
+    padding: 16px var(--gutter) 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     display: none;
+  }
+
+  nav.site-nav ul.nav-links li {
+    flex: none;
+  }
+
+  nav.site-nav .nav-btn {
+    width: 100%;
+    min-height: 46px;
+    justify-content: flex-start;
+    font-size: 0.95rem;
   }
 
   nav.site-nav[data-open="true"] ul.nav-links {
