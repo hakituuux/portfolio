@@ -77,4 +77,17 @@ async function initTubesCursor() {
   }
 }
 
-initTubesCursor();
+function scheduleTubesCursor() {
+  const run = () => initTubesCursor();
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(run, { timeout: 2500 });
+  } else {
+    window.addEventListener('load', () => setTimeout(run, 400), { once: true });
+  }
+}
+
+if (document.readyState === 'complete') {
+  scheduleTubesCursor();
+} else {
+  window.addEventListener('load', scheduleTubesCursor, { once: true });
+}

@@ -7,12 +7,17 @@
   <title>Portfolio Louane SANCHEZ - BTS SIO</title>
   <!-- Lien vers le fichier CSS -->
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/pages.css">
   <link rel="stylesheet" href="about.css">
-  <!-- Optionnel : Lien vers une police Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="page-site-bg" aria-hidden="true">
+    <img src="images/fondreste.png" alt="">
+  </div>
   <canvas id="tubes-canvas" aria-hidden="true"></canvas>
   <nav class="site-nav" data-open="false" aria-label="Navigation principale">
     <div class="nav-inner container">
@@ -33,13 +38,13 @@
     </div>
   </nav>
   <main>
-    <section class="about">
+    <section class="about page-shell">
       <div class="about-container">
         <div class="about-photo">
           <img src="images/imgmanoeuvre.jpg" alt="manoeuvre">
           <div class="about-buttons">
-            <a href="pdf/CV-Louane-Sanchez.pdf" class="button" download>Télécharger mon CV</a>
-            <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="button" target="_blank">Mon LinkedIn</a>
+            <a href="pdf/CV-Louane-Sanchez.pdf" class="button site-button" download>Télécharger mon CV</a>
+            <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="button site-button" target="_blank" rel="noopener noreferrer">Mon LinkedIn</a>
           </div>
 
         </div>

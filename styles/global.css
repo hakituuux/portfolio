@@ -51,7 +51,8 @@ body {
   mix-blend-mode: screen;
 }
 
-body.tubes-cursor-enabled > .hero-site-bg {
+body.tubes-cursor-enabled > .hero-site-bg,
+body.tubes-cursor-enabled > .page-site-bg {
   z-index: var(--layer-hero-bg);
 }
 

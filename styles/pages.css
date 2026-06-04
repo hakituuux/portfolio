@@ -1,0 +1,169 @@
+/* Pages secondaires — même esthétique que l’index */
+
+.page-site-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: var(--layer-hero-bg, 0);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-site-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.page-site-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.92));
+  pointer-events: none;
+}
+
+body:has(.page-site-bg) > main {
+  position: relative;
+  z-index: var(--layer-content, 2);
+  padding-top: calc(var(--nav-h) + 16px);
+}
+
+.page-shell {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  color: #fff;
+}
+
+.page-shell > h1,
+.page-shell > h2:first-of-type,
+.competences > h1,
+.projects > h2,
+.experiences > h2,
+.parcours-scolaire > h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
+}
+
+/* Boxes (comme description-bts / bts-card sur l’index) */
+.content-box,
+.competence-box,
+.project-box,
+.project-box2,
+.project-box3,
+.project-box5,
+.experience-box,
+.parcours-fond {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.competence-box h3,
+.project-box h3,
+.project-box2 h3,
+.project-box3 h3,
+.project-box5 h3,
+.experience-box h3 {
+  color: #fff;
+}
+
+.competence-content ul li,
+.competence-category h2 {
+  color: #fff;
+}
+
+.competence-category h2 {
+  margin: 32px 0 16px;
+}
+
+/* Boutons (nav / hero-action) */
+.site-button,
+.button,
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-button:hover,
+.button:hover,
+.download-btn:hover {
+  background: linear-gradient(135deg, rgba(105, 0, 197, 0.55), rgba(255, 123, 15, 0.42));
+  border-color: rgba(255, 123, 15, 0.55);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(105, 0, 197, 0.35);
+}
+
+.site-button:active,
+.button:active,
+.download-btn:active {
+  transform: translateY(0);
+}
+
+/* Images dans les boxes */
+.about-photo img,
+.about-photo-bottom-right img,
+.competence-image img,
+.project-boxes img,
+.experience-box img {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.about-text p,
+.project-box .brief,
+.competence-content {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Parcours sur page projets */
+.parcours-fond {
+  padding: 40px 32px;
+  max-width: 900px;
+}
+
+.etape {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  color: #111;
+}
+
+.etape h3 {
+  color: #6900c5;
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    padding-inline: 16px;
+  }
+}

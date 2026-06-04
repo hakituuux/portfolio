@@ -1,43 +1,27 @@
-// Slider compétences : défilement continu sans interruption
-(() => {
-  const track = document.querySelector('.logo-slider .slide-track');
-  if (!track || track.dataset.loopReady === 'true') return;
-
-  const ensureDuplicateSeries = () => {
-    const slides = [...track.children];
-    if (slides.length === 0) return;
-
-    const midpoint = Math.floor(slides.length / 2);
-    const firstHalf = slides.slice(0, midpoint);
-    const secondHalf = slides.slice(midpoint);
-
-    const sameLength = firstHalf.length === secondHalf.length && firstHalf.length > 0;
-    const sameOrder =
-      sameLength &&
-      firstHalf.every((slide, i) => slide.querySelector('img')?.src === secondHalf[i].querySelector('img')?.src);
-
-    if (!sameOrder) {
-      slides.forEach((slide) => track.appendChild(slide.cloneNode(true)));
-    }
-  };
-
-  const setScrollDistance = () => {
-    const loopWidth = track.scrollWidth / 2;
-    if (loopWidth > 0) {
-      track.style.setProperty('--scroll-distance', `${loopWidth}px`);
-    }
-  };
-
-  ensureDuplicateSeries();
-  setScrollDistance();
-
-  if (typeof ResizeObserver !== 'undefined') {
-    const ro = new ResizeObserver(setScrollDistance);
-    ro.observe(track);
-  } else {
-    window.addEventListener('resize', setScrollDistance);
-  }
-
-  track.dataset.loopReady = 'true';
-})();
-
+// Hero : photo + box contact à la hauteur du texte
+(() => {
+  const intro = document.querySelector('.hero-intro');
+  const row = document.querySelector('.hero-intro-row');
+  if (!intro || !row) return;
+
+  const sync = () => {
+    if (window.innerWidth < 901) {
+      row.style.removeProperty('--hero-text-h');
+      return;
+    }
+    row.style.setProperty('--hero-text-h', `${intro.offsetHeight}px`);
+  };
+
+  sync();
+  window.addEventListener('resize', sync);
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(sync);
+    ro.observe(intro);
+  }
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(sync);
+  }
+})();
+

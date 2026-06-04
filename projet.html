@@ -7,12 +7,17 @@
   <title>Portfolio Louane SANCHEZ - BTS SIO</title>
   <!-- Lien vers le fichier CSS -->
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/pages.css">
   <link rel="stylesheet" href="projet.css">
-  <!-- Optionnel : Lien vers une police Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="page-site-bg" aria-hidden="true">
+    <img src="images/fondreste.png" alt="">
+  </div>
   <canvas id="tubes-canvas" aria-hidden="true"></canvas>
   <nav class="site-nav" data-open="false" aria-label="Navigation principale">
     <div class="nav-inner container">
@@ -34,7 +39,7 @@
   </nav>
 
   <main>
-    <!-- Ton contenu ici -->
+    <div class="page-shell">
     <section class="projects">
       <div id="veille"></div>
       <h2>Mes Projets et Expériences</h2>
@@ -164,6 +169,7 @@
           </div>
         </div>
       </section>
+    </div>
   </main>
 
   <footer>

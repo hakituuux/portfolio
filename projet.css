@@ -1,61 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Projets — mise en page (styles communs : global.css + pages.css) */
 
-h2 {
-  color: #fff;
-  padding: 50px;
-  font-size: 3em;
-}
-
-header::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  /* hauteur de l'écran */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
-    url('images/fondreste.png') no-repeat center center/cover;
-  z-index: -1;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #ffffff;
-  background: #000;
-  /* Fond noir par défaut */
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-
-}
-
-main {
-  flex: 1;
-  padding: 80px 20px;
-}
-
-/* Navigation */
-/* Navigation now shared in styles/global.css */
-
-main {
-  padding: 80px 20px;
-}
-
-.projects {
-  padding: 60px 20px;
-
+.projects,
+.experiences,
+.parcours-scolaire {
   text-align: center;
+  padding: 0;
+}
+
+.projects > h2,
+.experiences > h2 {
+  padding: 0;
+  font-size: inherit;
 }
 
 .project-boxes {
@@ -72,7 +27,6 @@ main {
 }
 
 .project-box {
-  background: rgba(184, 184, 184, 0.418);
   width: 300px;
   height: 260px;
   padding: 20px;
@@ -89,7 +43,6 @@ main {
 }
 
 .project-box2 {
-  background: rgba(184, 184, 184, 0.418);
   width: 300px;
   height: 260px;
   padding: 20px;
@@ -106,7 +59,6 @@ main {
 }
 
 .project-box3 {
-  background: rgba(184, 184, 184, 0.418);
   width: 300px;
   height: 260px;
   padding: 20px;
@@ -118,7 +70,6 @@ main {
   cursor: pointer;
 }
 .project-box5 {
-  background: rgba(184, 184, 184, 0.418);
   width: 300px;
   height: 260px;
   padding: 20px;
@@ -209,22 +160,12 @@ main {
 }
 
 .download-btn {
-  display: inline-block;
   margin-top: 10px;
-  padding: 10px 15px;
-  background: linear-gradient(70deg, #6900c5, #ff7b0f, #de0067);
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
 }
 
-.download-btn:hover {
-  background: linear-gradient(70deg, #b867ffd1, #ff69af #ffb578);
-}
 .experiences {
-  padding: 60px 20px;
-  text-align: center;
+  margin-top: 48px;
+  width: 100%;
 }
 
 .experience-boxes {
@@ -235,7 +176,6 @@ main {
 }
 
 .experience-box {
-  background: rgba(184, 184, 184, 0.418);
   width: 300px;
   height: 260px;
   padding: 20px;
@@ -273,23 +213,16 @@ main {
 
 
 .parcours-scolaire {
-  text-align: center;
-  padding: 80px 20px;
+  margin-top: 56px;
 }
 
-/* Titre */
 .parcours-scolaire h2 {
-  font-size: 1.8rem;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
 }
 
-/* Boîte blanche de fond */
 .parcours-fond {
-  background: #ffffff4e;       /* fond blanc */
-  padding: 50px 50px;        /* espace intérieur */
-  border-radius: 20px;       /* coins arrondis */
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1); /* ombre légère */
-  max-width: 850px;
+  padding: 40px 32px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
 }
