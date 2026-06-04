@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Louane SANCHEZ - BTS SIO</title>
-  <!-- Lien vers le fichier CSS -->
+  <title>Compétences — Louane Sanchez</title>
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/pages.css">
   <link rel="stylesheet" href="competences.css">
@@ -37,125 +36,141 @@
       </ul>
     </div>
   </nav>
+
   <main>
-    <!-- Section compétences -->
-    <section class="competences page-shell">
-      <h1>Mes Compétences</h1>
+    <section class="competences-page page-shell">
 
-      <!-- Box principale Informatique -->
-      <div class="competence-category">
-        <h2>Informatique</h2>
+      <header class="competences-page__header">
+        <h1>Mes compétences</h1>
+        <p class="competences-page__intro">Tableau de compétences BTS SIO et synthèse de mes savoir-faire techniques, linguistiques et secours.</p>
+      </header>
 
-        <!-- Box Langages -->
-        <div class="competence-box">
-          <h3>Langages de Programmation</h3>
-          <div class="competence-inner-box">
-            <div class="competence-image">
-              <img src="images/prog.png" alt="Langages de programmation">
+      <figure class="competences-hero content-box">
+        <button type="button" class="competences-hero__trigger" data-lightbox-open aria-label="Agrandir le tableau de compétences">
+          <img src="images/competences-pdf.png" alt="Capture d'écran du tableau de compétences BTS SIO" loading="eager" decoding="async">
+          <span class="competences-hero__hint" aria-hidden="true">Cliquer pour agrandir</span>
+        </button>
+        <figcaption class="competences-hero__caption">Tableau de compétences — BTS SIO option SLAM</figcaption>
+      </figure>
+
+      <section class="competences-section" aria-labelledby="info-title">
+        <h2 id="info-title">Informatique</h2>
+        <div class="skills-grid">
+
+          <article class="skill-card content-box">
+            <div class="skill-card__header">
+              <span class="skill-card__icon skill-card__icon--code" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              <h3>Langages de programmation</h3>
             </div>
-            <div class="competence-content">
-              <ul>
-                <li>- HTML</li>
-                <li>- CSS</li>
-                <li>- PHP</li>
-                <li>- SQL</li>
-                <li>- Python</li>
-                <li>- JavaScript (notions)</li>
-              </ul>
+            <ul class="skill-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>PHP</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>JavaScript (notions)</li>
+            </ul>
+          </article>
+
+          <article class="skill-card content-box">
+            <div class="skill-card__header">
+              <span class="skill-card__icon skill-card__icon--tools" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m7 8 3 3-3 3M13 14h3"/></svg>
+              </span>
+              <h3>Logiciels utilisés</h3>
             </div>
-          </div>
+            <ul class="skill-tags">
+              <li>Visual Studio Code</li>
+              <li>VMWare</li>
+              <li>Docker</li>
+              <li>Canva</li>
+              <li>Git & GitHub</li>
+              <li>WordPress</li>
+            </ul>
+          </article>
+
+          <article class="skill-card content-box">
+            <div class="skill-card__header">
+              <span class="skill-card__icon skill-card__icon--os" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/><circle cx="12" cy="10" r="2"/></svg>
+              </span>
+              <h3>Systèmes d'exploitation</h3>
+            </div>
+            <ul class="skill-tags">
+              <li>Windows 10</li>
+              <li>Windows 11</li>
+              <li>Ubuntu</li>
+              <li>Linux (général)</li>
+            </ul>
+          </article>
+
         </div>
+      </section>
 
-        <!-- Box Logiciels -->
-        <div class="competence-box">
-          <h3>Logiciels Utilisés</h3>
-          <div class="competence-inner-box">
-            <div class="competence-image">
-              <img src="images/logi.png" alt="Logiciels utilisés">
-            </div>
-            <div class="competence-content">
-              <ul>
-                <li>- Visual Studio Code</li>
-                <li>- VMWare</li>
-                <li>- Docker</li>
-                <li>- Canva</li>
-                <li>- Git & GitHub</li>
-                <li>- WordPress</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <section class="competences-section competences-section--duo" aria-labelledby="langues-title">
+        <h2 id="langues-title">Langues étrangères</h2>
+        <div class="skills-grid skills-grid--duo">
 
-        <!-- Box Systèmes -->
-        <div class="competence-box">
-          <h3>Systèmes d'Exploitation</h3>
-          <div class="competence-inner-box">
-            <div class="competence-image">
-              <img src="images/syst.png" alt="Systèmes d'exploitation">
+          <article class="skill-card content-box">
+            <div class="skill-card__header">
+              <span class="skill-card__icon skill-card__icon--lang" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <h3>Langues étrangères</h3>
             </div>
-            <div class="competence-content">
-              <ul>
-                <li>- Windows 10</li>
-                <li>- Windows 11</li>
-                <li>- Ubuntu</li>
-                <li>- Linux (général)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+            <ul class="skill-tags">
+              <li>Français (langue native)</li>
+              <li>Anglais (B2)</li>
+              <li>Allemand (A2)</li>
+            </ul>
+          </article>
 
-      <!-- Box Langues -->
-      <div class="competence-category">
-        <h2>Langues Étrangères</h2>
-        <div class="competence-box">
-          <h3>Langues Étrangères</h3>
-          <div class="competence-inner-box">
-            <div class="competence-image">
-              <img src="images/langue.png" alt="Langues étrangères">
-            </div>
-            <div class="competence-content">
-              <ul>
-                <li>- Français (Langue native)</li>
-                <li>- Anglais (B2)</li>
-                <li>- Allemand (A2)</li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Box Secours (Pompiers) -->
-      <div class="competence-category">
-        <h2>Secours </h2>
-        <div class="competence-box">
-          <h3>Sapeur-pompier</h3>
-          <div class="competence-inner-box">
-            <div class="competence-image">
-              <img src="images/urgence.png" alt="Secours Pompiers">
+      <section class="competences-section competences-section--duo" aria-labelledby="secours-title">
+        <h2 id="secours-title">Secours</h2>
+        <div class="skills-grid skills-grid--duo">
+
+          <article class="skill-card content-box">
+            <div class="skill-card__header">
+              <span class="skill-card__icon skill-card__icon--secours" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-2 7-6 7-11a7 7 0 0 0-14 0c0 5 3 9 7 11z"/><path d="M12 14V8"/><path d="M9 11h6"/></svg>
+              </span>
+              <h3>Sapeur-pompier</h3>
             </div>
-            <div class="competence-content">
-              <ul>
-                <li>PSC1</li>
-                <li>PSE1</li>
-                <li>PSE2</li>
-                <li>Module Incendie</li>
-                <li>Module Divers</li>
-                <li>Module Inondation</li>
-                <li>Module Feu de Forêt</li>
-              </ul>
-            </div>
-          </div>
+            <ul class="skill-tags">
+              <li>PSC1</li>
+              <li>PSE1</li>
+              <li>PSE2</li>
+              <li>Module Incendie</li>
+              <li>Module Divers</li>
+              <li>Module Inondation</li>
+              <li>Module Feu de forêt</li>
+            </ul>
+          </article>
+
         </div>
-      </div>
+      </section>
+
     </section>
   </main>
 
-  <!-- Pied de page -->
   <footer>
     <p>&copy; 2025 Louane Sanchez. Tous droits réservés.</p>
   </footer>
+
+  <dialog class="image-lightbox" id="competences-lightbox" aria-label="Tableau de compétences agrandi">
+    <button type="button" class="image-lightbox__close" data-lightbox-close aria-label="Fermer">&times;</button>
+    <div class="image-lightbox__content">
+      <img src="images/competences-pdf.png" alt="Capture d'écran du tableau de compétences BTS SIO" decoding="async">
+    </div>
+  </dialog>
+
   <script src="scripts/site.js"></script>
+  <script src="scripts/competences.js"></script>
   <script type="module" src="scripts/tubes-cursor.js"></script>
 </body>
 

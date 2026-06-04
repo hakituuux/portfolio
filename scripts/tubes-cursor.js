@@ -2,14 +2,11 @@
 // Kevin Levron — https://www.framer.com/@kevin-levron/
 
 const TUBE_COLORS = ['#6900c5', '#ff7b0f', '#de0067'];
-const LIGHT_COLORS = ['#cf40ff', '#f70ab8', '#ff7b0f', '#9b43f0'];
+const LIGHT_COLORS = ['#9b43f0', '#c03090', '#e06810', '#7a00b8'];
 
-function randomColors(count) {
-  return Array.from({ length: count }, () =>
-    `#${Math.floor(Math.random() * 0xffffff)
-      .toString(16)
-      .padStart(6, '0')}`
-  );
+function applyBrandColors(app) {
+  app.tubes.setColors(TUBE_COLORS);
+  app.tubes.setLightsColors(LIGHT_COLORS);
 }
 
 function transparentizeRenderer(root) {
@@ -55,7 +52,7 @@ async function initTubesCursor() {
       tubes: {
         colors: TUBE_COLORS,
         lights: {
-          intensity: 200,
+          intensity: 115,
           colors: LIGHT_COLORS,
         },
       },
@@ -65,13 +62,9 @@ async function initTubesCursor() {
     applyTransparent();
     requestAnimationFrame(applyTransparent);
     setTimeout(applyTransparent, 150);
+    applyBrandColors(app);
 
     document.body.classList.add('tubes-cursor-enabled');
-
-    document.body.addEventListener('click', () => {
-      app.tubes.setColors(randomColors(3));
-      app.tubes.setLightsColors(randomColors(4));
-    });
   } catch (err) {
     console.warn('Tubes cursor could not load:', err);
   }

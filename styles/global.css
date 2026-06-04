@@ -51,6 +51,7 @@ body {
   pointer-events: none;
   background: transparent !important;
   mix-blend-mode: screen;
+  opacity: 0.72;
 }
 
 body.tubes-cursor-enabled > .hero-site-bg,
