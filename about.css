@@ -1,10 +1,15 @@
 /* À propos : 3 colonnes même hauteur (calée sur le texte) */
 
+.about.page-shell {
+  padding: 24px 10px 40px;
+}
+
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr) 380px;
-  gap: 20px;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) minmax(300px, 400px);
+  gap: 14px;
   align-items: stretch;
+  width: 100%;
 }
 
 /* Les 3 colonnes prennent la hauteur de la ligne (= hauteur du texte) */
@@ -21,7 +26,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 16px;
+  padding: 14px;
+  justify-self: start;
+  width: 100%;
+  max-width: 300px;
 }
 
 .about-photo-slot {
@@ -69,22 +77,50 @@
 /* Contact à droite — même hauteur que le texte */
 .about-layout > .hero-actions {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   justify-self: end;
   justify-content: space-between;
-  padding: 14px;
+  padding: 14px 16px;
 }
 
 .about-layout > .hero-actions .hero-action {
   flex: 1 1 0;
   min-height: 0;
   align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.about-layout > .hero-actions .hero-action__icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.about-layout > .hero-actions .hero-action__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-layout > .hero-actions .hero-action__label {
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
+  line-height: 1.25;
 }
 
 @media (max-width: 1024px) {
+  .about.page-shell {
+    padding-inline: 16px;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .about-photos {
+    max-width: 100%;
+    justify-self: center;
   }
 
   .about-photos.content-box,
