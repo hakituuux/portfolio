@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Louane SANCHEZ - BTS SIO</title>
-  <!-- Lien vers le fichier CSS -->
+  <title>À propos — Louane Sanchez</title>
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/pages.css">
   <link rel="stylesheet" href="about.css">
@@ -37,46 +36,77 @@
       </ul>
     </div>
   </nav>
+
   <main>
     <section class="about page-shell">
-      <div class="about-container">
-        <div class="about-photo">
-          <img src="images/imgmanoeuvre.jpg" alt="manoeuvre">
-          <div class="about-buttons">
-            <a href="pdf/CV-Louane-Sanchez.pdf" class="button site-button" download>Télécharger mon CV</a>
-            <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="button site-button" target="_blank" rel="noopener noreferrer">Mon LinkedIn</a>
-          </div>
+      <header class="about-hero">
+        <p class="about-hero__eyebrow">BTS SIO — option SLAM</p>
+        <h1>À propos de moi</h1>
+        <p class="about-hero__lead">
+          Développeuse en formation, engagée au quotidien — entre code, rigueur et service aux autres.
+        </p>
+      </header>
 
-        </div>
-        <div class="about-text">
-          <h1>À propos de moi</h1>
-          <p>
-            Actuellement en première année de BTS Services Informatiques aux Organisations (SIO) à l’EPSI de
-            Montpellier, je me spécialise dans le développement et je souhaite poursuivre mes études vers un master en
-            informatique, orienté développement logiciel.
-          </p>
-          <p>
-            Mon parcours a commencé avec un baccalauréat général spécialités Sciences Économiques et Sociales (SES) et
-            Sciences de la Vie et de la Terre (SVT), obtenu avec mention Assez Bien. Curieuse, investie et passionnée
-            par les technologies, j’ai choisi d’intégrer l’EPSI pour acquérir des compétences solides en programmation
-            et en gestion de projets informatiques.
-          </p>
-          <p>
-            En parallèle de mes études, je suis engagée depuis plusieurs années dans le monde du secours. J’ai été jeune
-            sapeur-pompier à Servian de mes 12 à 16 ans, une expérience qui m’a transmis rigueur, sens du travail en
-            équipe et goût de l’engagement. Aujourd’hui, je suis pompier volontaire à Corneilhan, mon village voisin, et
-            j’ai également fait partie de la Protection Civile de l’Hérault pendant un an avant d'intégrer le SDIS34 en tant que pompier volontaire.
-          </p>
-          <div class="about-photo-bottom-right">
-            <img src="images/protec.jpg" alt="protec">
-            <img src="images/pompier.jpg" alt="pompier">
+      <div class="about-layout">
+        <article class="about-story content-box">
+          <section class="about-block">
+            <h2>Formation & informatique</h2>
+            <p>
+              Actuellement en première année de BTS Services Informatiques aux Organisations (SIO) à l’EPSI de
+              Montpellier, je me spécialise dans le développement et je souhaite poursuivre mes études vers un master en
+              informatique, orienté développement logiciel.
+            </p>
+            <p>
+              Mon parcours a commencé avec un baccalauréat général spécialités Sciences Économiques et Sociales (SES) et
+              Sciences de la Vie et de la Terre (SVT), obtenu avec mention Assez Bien. Curieuse, investie et passionnée
+              par les technologies, j’ai choisi d’intégrer l’EPSI pour acquérir des compétences solides en programmation
+              et en gestion de projets informatiques.
+            </p>
+          </section>
+
+          <section class="about-block">
+            <h2>Engagement & secours</h2>
+            <p>
+              En parallèle de mes études, je suis engagée depuis plusieurs années dans le monde du secours. J’ai été jeune
+              sapeur-pompier à Servian de mes 12 à 16 ans, une expérience qui m’a transmis rigueur, sens du travail en
+              équipe et goût de l’engagement. Aujourd’hui, je suis pompier volontaire à Corneilhan, mon village voisin, et
+              j’ai également fait partie de la Protection Civile de l’Hérault pendant un an avant d'intégrer le SDIS34 en tant que pompier volontaire.
+            </p>
+          </section>
+
+          <div class="about-actions">
+            <a href="pdf/CV-Louane-Sanchez.pdf" class="site-button" download>Télécharger mon CV</a>
+            <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="site-button" target="_blank" rel="noopener noreferrer">Mon LinkedIn</a>
           </div>
-        </div>
+        </article>
+
+        <aside class="about-gallery" aria-label="Galerie photos">
+          <figure class="about-frame about-frame--main">
+            <div class="about-frame__inner">
+              <img src="images/imgmanoeuvre.jpg" alt="Louane en tenue de manoeuvre" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Manœuvre</figcaption>
+          </figure>
+
+          <div class="about-gallery__duo">
+            <figure class="about-frame about-frame--sub">
+              <div class="about-frame__inner">
+                <img src="images/protec.jpg" alt="Protection civile" loading="lazy" decoding="async">
+              </div>
+              <figcaption>Protection civile</figcaption>
+            </figure>
+            <figure class="about-frame about-frame--sub">
+              <div class="about-frame__inner">
+                <img src="images/pompier.jpg" alt="Pompier volontaire" loading="lazy" decoding="async">
+              </div>
+              <figcaption>Pompier volontaire</figcaption>
+            </figure>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <!-- Pied de page -->
   <footer>
     <p>&copy; 2025 Louane Sanchez. Tous droits réservés.</p>
   </footer>

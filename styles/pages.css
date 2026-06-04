@@ -130,8 +130,6 @@ body:has(.page-site-bg) > main {
 }
 
 /* Images dans les boxes */
-.about-photo img,
-.about-photo-bottom-right img,
 .competence-image img,
 .project-boxes img,
 .experience-box img {
