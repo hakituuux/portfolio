@@ -1,222 +1,125 @@
-/* À propos — mise en page dédiée */
+/* À propos : 3 colonnes même hauteur (calée sur le texte) */
 
-.about {
-  /* Photo principale = référence ; secondaires à 58 % (largeur & hauteur max) */
-  --about-photo-main-max: 360px;
-  --about-photo-sub-max: 209px;
-}
-
-/* En-tête */
-.about-hero {
-  text-align: center;
-  margin-bottom: clamp(32px, 5vw, 52px);
-}
-
-.about-hero__eyebrow {
-  margin: 0 0 10px;
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #ff7b0f;
-}
-
-.about-hero h1 {
-  margin: 0 0 14px;
-  font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.2rem);
-  line-height: 1.1;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-}
-
-.about.page-shell > .about-hero h1 {
-  text-align: center;
-}
-
-.about-hero__lead {
-  margin: 0 auto;
-  max-width: 52ch;
-  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem);
-  line-height: 1.6;
-  opacity: 0.92;
-}
-
-/* Grille principale : texte | galerie */
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
-  gap: clamp(24px, 4vw, 48px);
-  align-items: start;
+  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr) 380px;
+  gap: 20px;
+  align-items: stretch;
 }
 
-.about-story {
-  padding: clamp(24px, 3vw, 36px) clamp(22px, 3vw, 32px);
-}
-
-.about-block + .about-block {
-  margin-top: 28px;
-  padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-block h2 {
-  margin: 0 0 14px;
-  font-size: clamp(1.35rem, 1.1rem + 0.6vw, 1.75rem);
-  color: #ff7b0f;
-  text-align: left;
-}
-
-.about-block p {
-  margin: 0 0 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.about-block p:last-child {
-  margin-bottom: 0;
-}
-
-.about-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-actions .site-button {
-  flex: 1 1 200px;
-}
-
-/* Galerie photos */
-.about-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  position: sticky;
-  top: calc(var(--nav-h) + 20px);
-}
-
-.about-gallery__duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  align-items: start;
-}
-
-/* Cadre dégradé (comme la photo d’accueil) */
-.about-frame {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.about-frame__inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 18px;
-  background: rgba(8, 8, 12, 0.88);
+/* Les 3 colonnes prennent la hauteur de la ligne (= hauteur du texte) */
+.about-photos.content-box,
+.about-text.content-box,
+.about-layout > .hero-actions {
+  height: 100%;
+  min-height: 0;
   box-sizing: border-box;
 }
 
-.about-frame {
-  position: relative;
-  padding: 3px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #6900c5, #ff7b0f, #de0067);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+/* Photos à gauche — une box, images réparties sans crop */
+.about-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
 }
 
-.about-frame__inner {
-  position: relative;
-  z-index: 1;
-  border-radius: 17px;
-  min-height: 100px;
+.about-photo-slot {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Photo principale : dimension de référence */
-.about-frame--main {
-  width: 100%;
-  max-width: var(--about-photo-main-max);
+.about-photo-slot--main {
+  flex: 1.25 1 0;
 }
 
-.about-frame--main .about-frame__inner {
-  min-height: 180px;
-}
-
-.about-frame--main img {
+.about-photo-slot img {
   display: block;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
-  max-width: min(var(--about-photo-main-max), 100%);
-  max-height: min(420px, 55vh);
   object-fit: contain;
-  object-position: center center;
 }
 
-/* Photos secondaires : 58 % de la référence principale */
-.about-frame--sub {
-  width: 100%;
-  max-width: var(--about-photo-sub-max);
-  margin-inline: auto;
-}
-
-.about-frame--sub .about-frame__inner {
-  min-height: 100px;
-}
-
-.about-frame--sub img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: min(var(--about-photo-sub-max), 100%);
-  max-height: var(--about-photo-sub-max);
-  object-fit: contain;
-  object-position: center center;
-}
-
-.about-frame figcaption {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+/* Texte au centre — dans une box */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 24px;
   text-align: center;
 }
 
-/* Responsive */
+.about-text p {
+  margin: 0 auto 1em;
+  max-width: 58ch;
+  line-height: 1.65;
+  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact à droite — même hauteur que le texte */
+.about-layout > .hero-actions {
+  width: 100%;
+  max-width: 380px;
+  justify-self: end;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.about-layout > .hero-actions .hero-action {
+  flex: 1 1 0;
+  min-height: 0;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-photos.content-box,
+  .about-text.content-box,
+  .about-layout > .hero-actions {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .about-photos {
+    min-height: 320px;
+  }
+
+  .about-layout > .hero-actions {
+    max-width: 420px;
+    justify-self: center;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .about-layout > .hero-actions .hero-action {
+    flex: 0 0 auto;
+  }
+
+  .about-text {
+    order: -1;
+  }
+}
+
+@media (max-width: 520px) {
   .about-layout {
     grid-template-columns: 1fr;
   }
 
-  .about-gallery {
-    position: static;
-    max-width: 520px;
-    margin-inline: auto;
-  }
-
-  .about-frame--main {
-    margin-inline: auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-gallery__duo {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .about-actions {
-    flex-direction: column;
-  }
-
-  .about-actions .site-button {
-    width: 100%;
+  .about-layout > .hero-actions {
+    max-width: 100%;
   }
 }

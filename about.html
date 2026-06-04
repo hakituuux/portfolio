@@ -39,70 +39,73 @@
 
   <main>
     <section class="about page-shell">
-      <header class="about-hero">
-        <p class="about-hero__eyebrow">BTS SIO — option SLAM</p>
-        <h1>À propos de moi</h1>
-        <p class="about-hero__lead">
-          Développeuse en formation, engagée au quotidien — entre code, rigueur et service aux autres.
-        </p>
-      </header>
+      <h1>À propos de moi</h1>
 
       <div class="about-layout">
-        <article class="about-story content-box">
-          <section class="about-block">
-            <h2>Formation & informatique</h2>
-            <p>
-              Actuellement en première année de BTS Services Informatiques aux Organisations (SIO) à l’EPSI de
-              Montpellier, je me spécialise dans le développement et je souhaite poursuivre mes études vers un master en
-              informatique, orienté développement logiciel.
-            </p>
-            <p>
-              Mon parcours a commencé avec un baccalauréat général spécialités Sciences Économiques et Sociales (SES) et
-              Sciences de la Vie et de la Terre (SVT), obtenu avec mention Assez Bien. Curieuse, investie et passionnée
-              par les technologies, j’ai choisi d’intégrer l’EPSI pour acquérir des compétences solides en programmation
-              et en gestion de projets informatiques.
-            </p>
-          </section>
-
-          <section class="about-block">
-            <h2>Engagement & secours</h2>
-            <p>
-              En parallèle de mes études, je suis engagée depuis plusieurs années dans le monde du secours. J’ai été jeune
-              sapeur-pompier à Servian de mes 12 à 16 ans, une expérience qui m’a transmis rigueur, sens du travail en
-              équipe et goût de l’engagement. Aujourd’hui, je suis pompier volontaire à Corneilhan, mon village voisin, et
-              j’ai également fait partie de la Protection Civile de l’Hérault pendant un an avant d'intégrer le SDIS34 en tant que pompier volontaire.
-            </p>
-          </section>
-
-          <div class="about-actions">
-            <a href="pdf/CV-Louane-Sanchez.pdf" class="site-button" download>Télécharger mon CV</a>
-            <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="site-button" target="_blank" rel="noopener noreferrer">Mon LinkedIn</a>
+        <aside class="about-photos content-box" aria-label="Photos">
+          <div class="about-photo-slot about-photo-slot--main">
+            <img src="images/imgmanoeuvre.jpg" alt="Louane en tenue de manoeuvre" loading="lazy" decoding="async">
           </div>
-        </article>
-
-        <aside class="about-gallery" aria-label="Galerie photos">
-          <figure class="about-frame about-frame--main">
-            <div class="about-frame__inner">
-              <img src="images/imgmanoeuvre.jpg" alt="Louane en tenue de manoeuvre" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Manœuvre</figcaption>
-          </figure>
-
-          <div class="about-gallery__duo">
-            <figure class="about-frame about-frame--sub">
-              <div class="about-frame__inner">
-                <img src="images/protec.jpg" alt="Protection civile" loading="lazy" decoding="async">
-              </div>
-              <figcaption>Protection civile</figcaption>
-            </figure>
-            <figure class="about-frame about-frame--sub">
-              <div class="about-frame__inner">
-                <img src="images/pompier.jpg" alt="Pompier volontaire" loading="lazy" decoding="async">
-              </div>
-              <figcaption>Pompier volontaire</figcaption>
-            </figure>
+          <div class="about-photo-slot">
+            <img src="images/protec.jpg" alt="Protection civile" loading="lazy" decoding="async">
+          </div>
+          <div class="about-photo-slot">
+            <img src="images/pompier.jpg" alt="Pompier volontaire" loading="lazy" decoding="async">
           </div>
         </aside>
+
+        <article class="about-text content-box">
+          <p>
+            Actuellement en première année de BTS Services Informatiques aux Organisations (SIO) à l’EPSI de
+            Montpellier, je me spécialise dans le développement et je souhaite poursuivre mes études vers un master en
+            informatique, orienté développement logiciel.
+          </p>
+          <p>
+            Mon parcours a commencé avec un baccalauréat général spécialités Sciences Économiques et Sociales (SES) et
+            Sciences de la Vie et de la Terre (SVT), obtenu avec mention Assez Bien. Curieuse, investie et passionnée
+            par les technologies, j’ai choisi d’intégrer l’EPSI pour acquérir des compétences solides en programmation
+            et en gestion de projets informatiques.
+          </p>
+          <p>
+            En parallèle de mes études, je suis engagée depuis plusieurs années dans le monde du secours. J’ai été jeune
+            sapeur-pompier à Servian de mes 12 à 16 ans, une expérience qui m’a transmis rigueur, sens du travail en
+            équipe et goût de l’engagement. Aujourd’hui, je suis pompier volontaire à Corneilhan, mon village voisin, et
+            j’ai également fait partie de la Protection Civile de l’Hérault pendant un an avant d'intégrer le SDIS34 en tant que pompier volontaire.
+          </p>
+        </article>
+
+        <nav class="hero-actions" aria-label="Liens rapides">
+          <a href="index.html#contact" class="hero-action">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <span class="hero-action__label">Me contacter</span>
+          </a>
+          <a href="mailto:louane.sanchez@ecoles-espi.net" class="hero-action">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </span>
+            <span class="hero-action__label">Envoyer un mail</span>
+          </a>
+          <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="hero-action" target="_blank" rel="noopener noreferrer">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </span>
+            <span class="hero-action__label">LinkedIn</span>
+          </a>
+          <a href="pdf/CV-Louane-Sanchez.pdf" class="hero-action" download>
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
+            <span class="hero-action__label">Télécharger mon CV</span>
+          </a>
+          <a href="https://github.com/hakituuux" class="hero-action" target="_blank" rel="noopener noreferrer">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <span class="hero-action__label">GitHub</span>
+          </a>
+        </nav>
       </div>
     </section>
   </main>
