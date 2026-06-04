@@ -8,9 +8,14 @@
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="hero-site-bg" aria-hidden="true">
+    <img src="images/fondbg.png" alt="">
+  </div>
+  <canvas id="tubes-canvas" aria-hidden="true"></canvas>
   <header>
     <nav class="site-nav" data-open="false">
       <div class="nav-inner container">
@@ -21,41 +26,68 @@
           Menu
         </button>
         <ul class="nav-links">
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="projet.html">Projets & Expériences</a></li>
-        <li><a href="projet.html#veille">Veille technologique</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="index.html#contact">BTS</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="projet.html">Projets & Expériences</a></li>
+          <li><a href="projet.html#veille">Veille technologique</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="index.html#BTS">BTS</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <div class="hero-container">
-      <div class="hero-left">
-        <p>Bonjour ! Je m'appelle</p>
-        <h1>Louane Sanchez !</h1>
-        <p>Étudiante en seconde année de BTS SIO</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn">Me contacter</a>
-          <a href="mailto:louane.sanchez@ecoles-espi.net" class="btn btn-white">📧 Me contacter par mail</a>
-          <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" target="_blank" class="btn btn-white">💼 Mon
-            LinkedIn</a>
-          <a href="pdf/CV-Louane-Sanchez.pdf" class="btn" download>Télécharger mon CV</a>
+    <div class="hero-container container">
+      <div class="hero-layout">
+        <div class="hero-intro-row">
+          <div class="hero-photo">
+            <div class="hero-photo__frame">
+              <img src="images/moi.jpg" alt="Photo de Louane Sanchez">
+            </div>
+          </div>
+
+          <div class="hero-intro">
+            <p class="hero-intro__greeting">Bonjour, je m'appelle</p>
+            <h1 class="hero-intro__name">Louane Sanchez</h1>
+            <p class="hero-intro__role">Étudiante en 2<sup>e</sup> année de BTS SIO — option SLAM</p>
+            <p class="hero-intro__text">
+              Passionnée par l'informatique et les nouvelles technologies, je construis des solutions web
+              rigoureuses et structurées. Engagée comme pompier volontaire, je valorise l'esprit d'équipe,
+              la discipline et l'engagement au quotidien.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="hero-right about-hero">
-        <div class="about-image">
-          <img src="images/moi.jpg" alt="Ma photo">
-        </div>
-        <div class="about-text">
-          <p>
-            Je m'appelle Louane Sanchez, étudiante en seconde année de BTS SIO (Services Informatiques aux
-            Organisations),
-            spécialité SLAM, avec l’ambition de poursuivre vers un master en informatique. Passionnée par les nouvelles
-            technologies et engagée comme pompier volontaire,
-            j’accorde une grande importance à la rigueur, à l’esprit d’équipe et à l'engagement.
-          </p>
-        </div>
+
+        <nav class="hero-actions" aria-label="Liens rapides">
+          <a href="#contact" class="hero-action">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <span class="hero-action__label">Me contacter</span>
+          </a>
+          <a href="mailto:louane.sanchez@ecoles-espi.net" class="hero-action">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </span>
+            <span class="hero-action__label">Envoyer un mail</span>
+          </a>
+          <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" class="hero-action" target="_blank" rel="noopener noreferrer">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </span>
+            <span class="hero-action__label">LinkedIn</span>
+          </a>
+          <a href="pdf/CV-Louane-Sanchez.pdf" class="hero-action" download>
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
+            <span class="hero-action__label">Télécharger mon CV</span>
+          </a>
+          <a href="https://github.com/jsuishakitooo" class="hero-action" target="_blank" rel="noopener noreferrer">
+            <span class="hero-action__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <span class="hero-action__label">GitHub</span>
+          </a>
+        </nav>
       </div>
     </div>
   </header>
@@ -65,142 +97,149 @@
       <section id="BTS">
         <h2>Le BTS SIO</h2>
         <section class="bts-sio-section">
-  <h2 class="titre-bts">Présentation du BTS SIO</h2>
+          <h2 class="titre-bts">Présentation du BTS SIO</h2>
 
-  <div class="description-bts">
-    <p>
-      Le <strong>BTS SIO (Services Informatiques aux Organisations)</strong> est une formation en deux ans 
-      qui forme les étudiants aux métiers de l’informatique. 
-      Il se divise en deux options : <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers)
-      et <strong>SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux).
-      Ce diplôme prépare à devenir un professionnel capable de concevoir, développer, 
-      administrer et sécuriser des solutions informatiques pour les entreprises.
-    </p>
-  </div>
-
-  <!-- Option SLAM -->
-  <div class="bts-option slam">
-    <div class="bts-texte">
-      <h3>Option SLAM (Solutions Logicielles et Applications Métiers)</h3>
-      <p>
-        L’option <strong>SLAM</strong> forme les étudiants à la création et à la maintenance 
-        d’applications web, mobiles et logicielles. 
-        Elle met l’accent sur le développement, la programmation, les bases de données 
-        et la gestion de projets informatiques.
-        <br><br>
-        Les étudiants apprennent des langages comme <strong>HTML, CSS, PHP, SQL, Python</strong> 
-        et à utiliser des outils tels que <strong>Git, VS Code</strong> ou encore <strong>Laravel</strong>.
-      </p>
-    </div>
-    <div class="bts-image">
-      <img src="images/bts.slam.jpg" alt="Illustration BTS SIO SLAM">
-    </div>
-  </div>
-
-  <!-- Option SISR -->
-  <div class="bts-option sisr">
-    <div class="bts-image">
-      <img src="images/sisr.jpg" alt="Illustration BTS SIO SISR">
-    </div>
-    <div class="bts-texte">
-      <h3>Option SISR (Solutions d’Infrastructure, Systèmes et Réseaux)</h3>
-      <p>
-        L’option <strong>SISR</strong> forme les étudiants à la conception, la mise en place 
-        et la maintenance d’infrastructures réseau et de systèmes informatiques.
-        <br><br>
-        Elle s’adresse à ceux qui souhaitent devenir <strong>administrateur réseau, technicien système</strong> 
-        ou <strong>responsable de la sécurité informatique</strong>.
-        Les compétences portent sur la gestion des serveurs, la virtualisation, la cybersécurité
-        et la configuration des équipements réseau.
-      </p>
-    </div>
-  </div>
-        </section>
-
-
-        <section class="main-content">
-          <div class="parcours-scolaire">
-            <h2>Mon Parcours scolaire</h2>
-            <div class="parcours-fond">
-              <div class="grille-parcours">
-
-                <div class="etape college">
-                  <h3>Collège privé Fenelon Béziers</h3>
-                  <p>
-                    2017-2021 <br>
-                    Brevet des collèges mention Très Bien<br>
-                    Classes européennes en anglais en 4ème et 3ème<br>
-                    Stage d’observation de 3ème au sein de la police rurale de Lignan-sur-Orb
-                  </p>
-                </div>
-
-                <div class="etape lycee">
-                  <h3>Lycée général Henri IV Béziers</h3>
-                  <p>
-                    2021-2024 <br>
-                    Baccalauréat général mention Assez Bien<br>
-                    Spécialités : SVT - SES
-                  </p>
-                </div>
-
-                <div class="etape etudes">
-                  <h3>EPSI Montpellier</h3>
-                  <p>
-                    2024-2025<br> 1ère année de BTS SIO option SLAM, stage de 7 semaines chez Genvia<br>
-                    2025-2026<br> 2ème année de BTS SIO
-                  </p>
-                </div>
-
-                <div class="fleche fleche1">➔</div>
-                <div class="fleche fleche2">➔</div>
-
-              </div>
-            </div>
+          <div class="description-bts">
+            <p>
+              Le <strong>BTS SIO (Services Informatiques aux Organisations)</strong> est une formation en deux ans
+              qui forme les étudiants aux métiers de l'informatique.
+              Il se divise en deux options : <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers)
+              et <strong>SISR</strong> (Solutions d'Infrastructure, Systèmes et Réseaux).
+              Ce diplôme prépare à devenir un professionnel capable de concevoir, développer,
+              administrer et sécuriser des solutions informatiques pour les entreprises.
+            </p>
           </div>
 
-          <!-- Colonne droite : Projets -->
-          <div class="projects">
-            <h2>Mes Projets</h2>
-            <div class="project-block">
-              <figure class="snip1573">
-                <div class="projects-preview" aria-hidden="true">
-                  <div class="preview-item">
-                    <img src="images/projet1.png" alt="">
-                    <div class="preview-text">
-                      <strong>Gestion d'hôtel</strong>
-                      <span>Réservation, admin, MySQL</span>
-                    </div>
-                  </div>
-                  <div class="preview-item">
-                    <img src="images/projet2.png" alt="">
-                    <div class="preview-text">
-                      <strong>Site e-commerce</strong>
-                      <span>Panier, paiement, SEO</span>
-                    </div>
+          <div class="bts-cards">
+            <article class="bts-card">
+              <div class="bts-card__header">
+                <h3>Option SLAM</h3>
+                <span>Solutions Logicielles et Applications Métiers</span>
+              </div>
+              <div class="bts-card__body">
+                <div class="bts-card__text">
+                  <p>
+                    L'option <strong>SLAM</strong> forme les étudiants à la création et à la maintenance
+                    d'applications web, mobiles et logicielles. Elle met l'accent sur le développement,
+                    la programmation, les bases de données et la gestion de projets informatiques.
+                  </p>
+                  <p>
+                    Langages et outils : <strong>HTML, CSS, PHP, SQL, Python</strong>, <strong>Git</strong>,
+                    <strong>VS Code</strong>, <strong>Laravel</strong>.
+                  </p>
+                </div>
+                <div class="bts-card__image">
+                  <img src="images/bts.slam.jpg" alt="Illustration BTS SIO - option SLAM">
+                </div>
+              </div>
+            </article>
+
+            <article class="bts-card">
+              <div class="bts-card__header">
+                <h3>Option SISR</h3>
+                <span>Solutions d'Infrastructure, Systèmes et Réseaux</span>
+              </div>
+              <div class="bts-card__body">
+                <div class="bts-card__text">
+                  <p>
+                    L'option <strong>SISR</strong> forme les étudiants à la conception, la mise en place
+                    et la maintenance d'infrastructures réseau et de systèmes informatiques.
+                  </p>
+                  <p>
+                    Métiers : <strong>administrateur réseau</strong>, <strong>technicien système</strong>,
+                    <strong>sécurité informatique</strong>.
+                  </p>
+                </div>
+                <div class="bts-card__image">
+                  <img src="images/bts.sisr.jpg" alt="Illustration BTS SIO - option SISR">
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="parcours-scolaire">
+          <h2>Mon Parcours scolaire</h2>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <h3>Collège privé Fenelon Béziers</h3>
+                <p>
+                  <strong>2017-2021</strong><br>
+                  Brevet des collèges mention Très Bien<br>
+                  Classes européennes en anglais en 4<sup>e</sup> et 3<sup>e</sup><br>
+                  Stage d'observation de 3<sup>e</sup> au sein de la police rurale de Lignan-sur-Orb
+                </p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <h3>Lycée général Henri IV Béziers</h3>
+                <p>
+                  <strong>2021-2024</strong><br>
+                  Baccalauréat général mention Assez Bien<br>
+                  Spécialités : SVT - SES
+                </p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <h3>EPSI Montpellier</h3>
+                <p>
+                  <strong>2024-2026</strong><br>
+                  1<sup>re</sup> année de BTS SIO option SLAM, stage de 7 semaines chez Genvia<br>
+                  2<sup>e</sup> année de BTS SIO
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="projects-section" aria-label="Projets">
+          <h2>Mes Projets</h2>
+          <figure class="snip1573 snip-projects snip-projects--section">
+            <div class="projects-master" aria-hidden="true">
+              <div class="projects-master__grid">
+                <div class="projects-master__card">
+                  <img src="images/projet1.png" alt="">
+                  <div class="projects-master__text">
+                    <strong>Gestion d'hôtel</strong>
+                    <span>Réservation, administration, MySQL</span>
                   </div>
                 </div>
-                <figcaption>
-                  <h3>En savoir plus</h3>
-                </figcaption>
-                <a href="projet.html"></a>
-              </figure>
-
-              <div class="project-container">
-                <div class="project">
-                  <img src="images/projet1.png" alt="Projet 1">
-                  <h3>Projet de gestion d'hôtel fictif</h3>
-                  <p>Création d'un site d'hotel fictif, avec la gestion de l'hotel.</p>
+                <div class="projects-master__card">
+                  <img src="images/projet2.png" alt="">
+                  <div class="projects-master__text">
+                    <strong>Site e-commerce</strong>
+                    <span>Panier, paiement, SEO</span>
+                  </div>
                 </div>
-
-                <div class="project">
-                  <img src="images/projet2.png" alt="Projet 2">
-                  <h3>Site e-commerce</h3>
-                  <p>Création d’un site e-commerce de snacks américains et asiatiques.</p>
+                <div class="projects-master__card">
+                  <img src="images/projet5.jpg" alt="">
+                  <div class="projects-master__text">
+                    <strong>Gestion de gîte</strong>
+                    <span>HTML, CSS, PHP, MySQL</span>
+                  </div>
+                </div>
+                <div class="projects-master__card">
+                  <img src="images/projet4.jpg" alt="">
+                  <div class="projects-master__text">
+                    <strong>Stage Genvia</strong>
+                    <span>Team Digital, 1<sup>re</sup> année BTS</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            <figcaption>
+              <h3>Voir tous mes projets</h3>
+            </figcaption>
+            <a href="projet.html" aria-label="Aller à la page Projets"></a>
+          </figure>
         </section>
+
         <section id="skills">
           <h2>Mes Compétences</h2>
           <div class="logo-slider">
@@ -210,21 +249,6 @@
               <a href="competences.html" class="slide"><img src="images/pythonlogo.png" alt="Python"></a>
               <a href="competences.html" class="slide"><img src="images/logophp.png" alt="PHP"></a>
               <a href="competences.html" class="slide"><img src="images/logosql.png" alt="SQL"></a>
-
-              <!-- répétitions pour l’effet continu -->
-              <a href="competences.html" class="slide"><img src="images/logohtml.png" alt="HTML"></a>
-              <a href="competences.html" class="slide"><img src="images/logocss.png" alt="CSS"></a>
-              <a href="competences.html" class="slide"><img src="images/pythonlogo.png" alt="Python"></a>
-              <a href="competences.html" class="slide"><img src="images/logophp.png" alt="PHP"></a>
-              <a href="competences.html" class="slide"><img src="images/logosql.png" alt="SQL"></a>
-
-              <!-- duplicata supplémentaire -->
-              <a href="competences.html" class="slide"><img src="images/logohtml.png" alt="HTML"></a>
-              <a href="competences.html" class="slide"><img src="images/logocss.png" alt="CSS"></a>
-              <a href="competences.html" class="slide"><img src="images/pythonlogo.png" alt="Python"></a>
-              <a href="competences.html" class="slide"><img src="images/logophp.png" alt="PHP"></a>
-              <a href="competences.html" class="slide"><img src="images/logosql.png" alt="SQL"></a>
-
               <a href="competences.html" class="slide"><img src="images/logohtml.png" alt="HTML"></a>
               <a href="competences.html" class="slide"><img src="images/logocss.png" alt="CSS"></a>
               <a href="competences.html" class="slide"><img src="images/pythonlogo.png" alt="Python"></a>
@@ -232,34 +256,26 @@
               <a href="competences.html" class="slide"><img src="images/logosql.png" alt="SQL"></a>
             </div>
           </div>
-          </div>
         </section>
-
 
         <section id="contact" class="contact">
-          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Me contacter</h2>
-          <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
-            <li><strong>📧 Mail pro :</strong> <a
-                href="mailto:louane.sanchez@ecoles-espi.net">louane.sanchez@ecoles-espi.net</a></li>
-            <li><strong>📧🧑‍🚒 Mail pro pompier :</strong> <a href="mailto:lsanchez4@sdis34.fr">lsanchez4@sdis34.fr</a>
-            </li>
-            <li><strong>📨 Mail perso :</strong> <a
-                href="mailto:sanchezlouane2709@gmail.com">sanchezlouane2709@gmail.com</a></li>
-            <li><strong>💻 GitHub :</strong> <a href="https://github.com/jsuishakitooo"
-                target="_blank">github.com/jsuishakitooo</a></li>
-            <li><strong>📱 LinkedIn :</strong> <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/"
-                target="_blank">linkedin.com/in/louane-sanchez-22754b327</a></li>
+          <h2>Me contacter</h2>
+          <ul class="contact-list">
+            <li><strong>Mail pro :</strong> <a href="mailto:louane.sanchez@ecoles-espi.net">louane.sanchez@ecoles-espi.net</a></li>
+            <li><strong>Mail perso :</strong> <a href="mailto:sanchezlouane2709@gmail.com">sanchezlouane2709@gmail.com</a></li>
+            <li><strong>GitHub :</strong> <a href="https://github.com/jsuishakitooo" target="_blank" rel="noopener noreferrer">github.com/jsuishakitooo</a></li>
+            <li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/louane-sanchez-22754b327/" target="_blank" rel="noopener noreferrer">linkedin.com/in/louane-sanchez-22754b327</a></li>
           </ul>
         </section>
-
       </section>
+    </section>
   </main>
 
-  <!-- Pied de page -->
   <footer>
     <p>&copy; 2025 Louane Sanchez. Tous droits réservés.</p>
   </footer>
   <script src="scripts/site.js"></script>
+  <script type="module" src="scripts/tubes-cursor.js"></script>
   <script src="index.js"></script>
 </body>
 

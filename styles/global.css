@@ -5,8 +5,11 @@
   --muted: rgba(255, 255, 255, 0.8);
   --accent: #b81c00;
   --nav-h: 72px;
-  --container: 1100px;
-  --gutter: 20px;
+  --container: 1600px;
+  --gutter: clamp(14px, 2.2vw, 32px);
+  --layer-hero-bg: 0;
+  --layer-tubes: 1;
+  --layer-content: 2;
 }
 
 *,
@@ -23,9 +26,42 @@ body {
   margin: 0;
   font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   line-height: 1.6;
+  font-size: clamp(16px, 15px + 0.35vw, 19px);
   color: var(--fg);
   background: var(--bg);
   min-height: 100vh;
+}
+
+#tubes-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-tubes);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent !important;
+  mix-blend-mode: screen;
+}
+
+body.tubes-cursor-enabled > .hero-site-bg {
+  z-index: var(--layer-hero-bg);
+}
+
+body.tubes-cursor-enabled > header,
+body.tubes-cursor-enabled > main,
+body.tubes-cursor-enabled > footer {
+  position: relative;
+  z-index: var(--layer-content);
+  isolation: isolate;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 1.4rem + 2.2vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 1.2rem + 1.7vw, 2.8rem);
 }
 
 img,
@@ -45,7 +81,6 @@ a {
   margin-inline: auto;
 }
 
-/* Fixed navigation */
 nav.site-nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -101,12 +136,14 @@ nav.site-nav ul.nav-links a:hover {
   color: var(--accent);
 }
 
-/* Keep content visible under fixed nav */
 main {
   padding-top: calc(var(--nav-h) + 20px);
 }
 
-/* Mobile menu */
+body:has(.hero-container) main {
+  padding-top: 0;
+}
+
 @media (max-width: 900px) {
   nav.site-nav .nav-toggle {
     display: inline-flex;
@@ -132,4 +169,3 @@ main {
     display: flex;
   }
 }
-
