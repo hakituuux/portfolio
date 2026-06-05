@@ -20,9 +20,7 @@ main h2 {
   margin-bottom: 18px;
 }
 
-/* ================================
-   PROJECTS + SNIP1573 (style validé)
-==================================*/
+/* Projets (cartes) */
 .snip1573 {
   background-color: #000;
   display: inline-block;
@@ -204,9 +202,7 @@ main h2 {
   opacity: 0.78;
 }
 
-/* ================================
-   Skills slider
-==================================*/
+/* Slider compétences */
 #skills {
   --slide-w: 150px;
   --slide-gap: 24px;
@@ -263,7 +259,7 @@ main h2 {
   object-fit: contain;
 }
 
-/* Boucle infinie : distance mesurée en JS (--scroll-distance) ou série CSS */
+/* Défilement infini (piloté en JS) */
 @keyframes skills-scroll {
   0% {
     transform: translateX(0);
@@ -278,9 +274,7 @@ main h2 {
   animation-play-state: running;
 }
 
-/* ================================
-   Header + hero
-==================================*/
+/* Header / hero */
 header {
   position: relative;
   color: #fff;
@@ -541,9 +535,7 @@ header:has(.hero-container) + main {
   }
 }
 
-/* ================================
-   BTS SIO
-==================================*/
+/* BTS SIO */
 .bts-sio-section {
   padding: 28px 20px 48px;
   background: transparent;
@@ -644,9 +636,7 @@ header:has(.hero-container) + main {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* ================================
-   Timeline
-==================================*/
+/* Parcours (timeline) */
 .parcours-scolaire {
   padding: 44px 20px;
   max-width: 1600px;
@@ -712,9 +702,7 @@ header:has(.hero-container) + main {
   line-height: 1.65;
 }
 
-/* ================================
-   Contact + footer
-==================================*/
+/* Contact + footer */
 .contact {
   padding: 48px 20px 64px;
   max-width: 1600px;
@@ -742,9 +730,7 @@ footer {
   padding: 20px;
 }
 
-/* ================================
-   Responsive
-==================================*/
+/* Responsive */
 @media (max-width: 1024px) {
   header:has(.hero-container) + main {
     margin-top: -6vh;
